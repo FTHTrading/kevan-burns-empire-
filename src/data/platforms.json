@@ -676,11 +676,11 @@
     "orcid": "https://orcid.org/"
   },
   "ipfs": {
-    "cid": "bafybeiaxwvryhtbpslxnzptnbhksekv2l27gkdmtvzyvsr7ddbumlydrdm",
-    "ipns": "k51qzi5uqu5dm6qsf1hqk4bgq4y0t53trzekg5vzfl8080j1yh334aira0fgqn",
-    "peerId": "12D3KooWS2kwSctr6Lbxw2BZrEpAKQEwpaX1KnwDUSTxC3EKZd6E",
-    "gateway": "https://ipfs.io/ipfs/bafybeiaxwvryhtbpslxnzptnbhksekv2l27gkdmtvzyvsr7ddbumlydrdm",
-    "localGateway": "http://127.0.0.1:8081/ipfs/bafybeiaxwvryhtbpslxnzptnbhksekv2l27gkdmtvzyvsr7ddbumlydrdm",
-    "dweb": "https://bafybeiaxwvryhtbpslxnzptnbhksekv2l27gkdmtvzyvsr7ddbumlydrdm.ipfs.dweb.link"
+    "cid": "bafybeiffc3blgdltq4aipquwdr6s7y743vrkdfqdgunhfzh4yp6cqbo6a4",
+    "ipns": "k51qzi5uqu5dmcsix75x8k49h89lom468oon5qr35w21x2iww7v7g4firud5w3",
+    "peerId": "12D3KooWSV56p2uNuB1mJRVSUEaV3F4QLeHSNaMcVt1sRLD3ryhU",
+    "gateway": "https://ipfs.io/ipfs/bafybeiffc3blgdltq4aipquwdr6s7y743vrkdfqdgunhfzh4yp6cqbo6a4",
+    "localGateway": "http://127.0.0.1:8081/ipfs/bafybeiffc3blgdltq4aipquwdr6s7y743vrkdfqdgunhfzh4yp6cqbo6a4",
+    "dweb": "https://bafybeiffc3blgdltq4aipquwdr6s7y743vrkdfqdgunhfzh4yp6cqbo6a4.ipfs.dweb.link"
   }
 }
