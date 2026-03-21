@@ -6,11 +6,20 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        empire: {
+          bg: "#0a0a0f",
+          card: "#12121a",
+          border: "#1e1e2e",
+          text: "#f0f0f5",
+          muted: "#8888a0",
+        },
       },
     },
   },

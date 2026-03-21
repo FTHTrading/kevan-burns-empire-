@@ -1,0 +1,155 @@
+{
+  "hero": {
+    "title": "Productized Sovereign Infrastructure",
+    "subtitle": "Deterministic systems designed, built, and deployed — not pitched. Every engagement is scoped to eliminate ambiguity and deliver measurable institutional outcomes.",
+    "cta": "Schedule Architecture Review"
+  },
+  "tiers": [
+    {
+      "id": "architecture-sprint",
+      "name": "Architecture Sprint",
+      "tagline": "Full-Stack Sovereign System Design",
+      "description": "End-to-end architecture design for blockchain infrastructure, tokenized capital systems, AI operating environments, or multi-chain settlement layers. Delivered as a deterministic blueprint with implementation roadmap.",
+      "price": "$25,000 — $150,000",
+      "priceNote": "Scoped by system complexity",
+      "color": "#3b82f6",
+      "deliverables": [
+        "System architecture document (50-200 pages)",
+        "Smart contract specifications & security model",
+        "Multi-chain settlement flow diagrams",
+        "Infrastructure deployment playbook",
+        "12-month scaling roadmap",
+        "2x architecture review sessions"
+      ],
+      "timeline": "4 — 12 weeks",
+      "ideal": "Institutions, funds, or protocols building sovereign infrastructure from zero"
+    },
+    {
+      "id": "token-design",
+      "name": "Token Design Sprint",
+      "tagline": "Deterministic Tokenomics Engineering",
+      "description": "Custom token architecture including economic modeling, supply mechanics, governance structures, and multi-chain deployment strategy. Built with Genesis Protocol-grade simulation methodology.",
+      "price": "$10,000 — $50,000",
+      "priceNote": "Based on token complexity & chain count",
+      "color": "#8b5cf6",
+      "deliverables": [
+        "Token economic model & supply mechanics",
+        "Governance structure specification",
+        "Multi-chain deployment strategy",
+        "Simulation results (Genesis Protocol methodology)",
+        "Compliance framework alignment",
+        "Smart contract architecture"
+      ],
+      "timeline": "3 — 8 weeks",
+      "ideal": "DeFi protocols, RWA issuers, or institutional token launches"
+    },
+    {
+      "id": "rwa-structuring",
+      "name": "RWA Structuring",
+      "tagline": "Real-World Asset Tokenization Architecture",
+      "description": "Institutional-grade structuring for real-world asset tokenization — including compliance mapping, custody integration, settlement architecture, and multi-jurisdiction regulatory alignment.",
+      "price": "$7,500 — $35,000+",
+      "priceNote": "Per asset class or structure",
+      "color": "#f59e0b",
+      "deliverables": [
+        "Asset tokenization architecture",
+        "Compliance & regulatory mapping",
+        "Custody & settlement integration spec",
+        "SPV / legal wrapper framework",
+        "Cap table & distribution mechanics",
+        "Secondary market infrastructure design"
+      ],
+      "timeline": "4 — 10 weeks",
+      "ideal": "Fund managers, family offices, or institutional issuers tokenizing real-world assets"
+    },
+    {
+      "id": "consulting-retainer",
+      "name": "Strategic Consulting",
+      "tagline": "Ongoing Sovereign Advisory",
+      "description": "Monthly retainer for ongoing strategic infrastructure advisory — architecture reviews, protocol governance, technical due diligence, and systems optimization across blockchain and AI stacks.",
+      "price": "$5,000 — $20,000/mo",
+      "priceNote": "Monthly retainer",
+      "color": "#10b981",
+      "deliverables": [
+        "Weekly architecture review sessions",
+        "Protocol governance advisory",
+        "Technical due diligence support",
+        "Infrastructure audit & optimization",
+        "Priority async communication channel",
+        "Quarterly strategic roadmap updates"
+      ],
+      "timeline": "3+ month engagement",
+      "ideal": "Protocols, DAOs, or institutions needing continuous sovereign systems advisory"
+    },
+    {
+      "id": "kairos-licensing",
+      "name": "KAIROS AI Licensing",
+      "tagline": "AI Operating System Deployment",
+      "description": "Enterprise licensing of the KAIROS AI infrastructure stack — including agentic RAG, document intelligence, voice AI runtime, and MCP marketing infrastructure. White-label or embedded deployment.",
+      "price": "Custom Licensing",
+      "priceNote": "Annual or per-deployment",
+      "color": "#ec4899",
+      "deliverables": [
+        "KAIROS core runtime license",
+        "Agentic RAG pipeline deployment",
+        "Document intelligence integration",
+        "Voice AI runtime (XTTS + Wake Word)",
+        "MCP marketing infrastructure module",
+        "Dedicated support & SLA"
+      ],
+      "timeline": "Ongoing license",
+      "ideal": "Enterprises deploying AI operating environments at scale"
+    },
+    {
+      "id": "certification",
+      "name": "FTH Certification Program",
+      "tagline": "Sovereign Systems Certification",
+      "description": "Structured certification pathway for engineers and architects seeking mastery in deterministic infrastructure design — covering blockchain settlement, AI systems, tokenization, and sovereign architecture.",
+      "price": "$2,500 — $7,500",
+      "priceNote": "Per certification track",
+      "color": "#06b6d4",
+      "deliverables": [
+        "Self-paced curriculum access",
+        "Hands-on project assignments",
+        "1-on-1 mentorship sessions",
+        "Certification credential (on-chain verifiable)",
+        "FTH University alumni network access",
+        "Career placement support"
+      ],
+      "timeline": "8 — 16 weeks per track",
+      "ideal": "Engineers, architects, or teams upskilling in sovereign infrastructure"
+    }
+  ],
+  "enterprise": {
+    "title": "Enterprise & Institutional Licensing",
+    "description": "For organizations requiring dedicated infrastructure deployment, custom SLAs, and white-glove architecture support.",
+    "tiers": [
+      {
+        "name": "Bronze",
+        "price": "$10,000/yr",
+        "features": ["Email support (48h SLA)", "Quarterly architecture review", "Access to FTH Docs Hub", "Community forum access"]
+      },
+      {
+        "name": "Silver",
+        "price": "$25,000/yr",
+        "features": ["Priority email support (24h SLA)", "Monthly architecture review", "Full documentation access", "2 certification seats", "Quarterly roadmap briefing"]
+      },
+      {
+        "name": "Gold",
+        "price": "$50,000/yr",
+        "features": ["Dedicated support channel (12h SLA)", "Bi-weekly architecture sessions", "Custom documentation portal", "5 certification seats", "Monthly roadmap briefing", "Infrastructure audit (annual)"]
+      },
+      {
+        "name": "Platinum",
+        "price": "$100,000+/yr",
+        "features": ["Dedicated account architect", "On-demand support (4h SLA)", "Custom infrastructure deployment", "Unlimited certification seats", "Weekly strategic sessions", "Full infrastructure audit (quarterly)", "White-label licensing options"]
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Build Deterministic Infrastructure?",
+    "subtitle": "Every engagement starts with a scoping call. No ambiguity, no surprise invoices — just precisely architected outcomes.",
+    "email": "kevan.burns@fthtrading.com",
+    "buttonText": "Schedule Architecture Review"
+  }
+}

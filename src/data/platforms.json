@@ -1,0 +1,686 @@
+{
+  "platforms": [
+    {
+      "id": "fth-os",
+      "name": "FTH OS",
+      "subtitle": "Future Tech Holdings",
+      "tagline": "Deterministic capital infrastructure across 13 chains.",
+      "color": "#3B82F6",
+      "colorName": "blue",
+      "emoji": "🔷",
+      "description": "Sovereign capital infrastructure with deterministic execution runtime, vault architecture, and multi-chain invariant enforcement. Zero undefined failure states across custody, issuance, settlement, and surveillance.",
+      "features": [
+        "Deterministic execution runtime",
+        "Vault architecture",
+        "Multi-chain invariant enforcement",
+        "Custody & Issuance",
+        "Settlement & Surveillance",
+        "Zero undefined failure states"
+      ],
+      "links": [
+        { "label": "Live Platform", "url": "https://fthtrading.github.io/FTH-Trading/" },
+        { "label": "Boutique OS", "url": "https://fthtrading.github.io/boutique/" }
+      ],
+      "status": "live",
+      "category": "infrastructure"
+    },
+    {
+      "id": "fth-boutique",
+      "name": "FTH Boutique OS",
+      "subtitle": "Global Commodity Sourcing & Structuring",
+      "tagline": "50 years of commodity intelligence. Now AI-native.",
+      "color": "#059669",
+      "colorName": "emerald",
+      "emoji": "☕",
+      "description": "MCP-orchestrated, RAG-powered global commodity advisory system. Coffee, cocoa, precious metals, base metals, and energy — structured with compliance intelligence, 110-point credit scoring, and institutional-grade proposal generation. Est. 1976.",
+      "features": [
+        "Multi-commodity lead qualification & credit scoring",
+        "AI-powered proposal generation (PDF + Web + Email)",
+        "Compliance intelligence (OFAC/AML/export controls)",
+        "Regenerative sourcing certificates",
+        "LBMA custody tracking (precious metals)",
+        "MCP agent orchestration (5 agents)",
+        "pgvector RAG memory system",
+        "110-point credit scoring algorithm"
+      ],
+      "links": [
+        { "label": "Live Platform", "url": "https://fthtrading.github.io/boutique/" },
+        { "label": "GitHub", "url": "https://github.com/fthtrading/boutique" }
+      ],
+      "status": "live",
+      "category": "revenue"
+    },
+    {
+      "id": "genesis-protocol",
+      "name": "Genesis Protocol",
+      "subtitle": "Genesis Protocol",
+      "tagline": "Deterministic multi-agent economic simulation engine.",
+      "color": "#F59E0B",
+      "colorName": "amber",
+      "emoji": "🔶",
+      "description": "Computational macroeconomic research infrastructure. 5,680 simulated worlds with zero collapse observed. Logistic resource pools with mutation and catastrophe stress testing.",
+      "features": [
+        "5,680 simulated worlds",
+        "Zero collapse observed",
+        "Logistic resource pools",
+        "Mutation & catastrophe stress tests",
+        "Multi-agent economic modeling",
+        "Research-grade simulation engine"
+      ],
+      "links": [
+        { "label": "Genesis Platform", "url": "https://fthtrading.github.io/Genesis/" },
+        { "label": "SUPER-S Genesis", "url": "https://fthtrading.github.io/SUPER-S/genesis.html" },
+        { "label": "Zenodo Publication", "url": "https://zenodo.org/records/18729652" }
+      ],
+      "status": "live",
+      "category": "research"
+    },
+    {
+      "id": "helios",
+      "name": "Helios",
+      "subtitle": "Helios",
+      "tagline": "Gold-backed smart contract activation system.",
+      "color": "#EAB308",
+      "colorName": "yellow",
+      "emoji": "🟡",
+      "description": "Gold-backed smart contract activation system on XRPL and Stellar rails. Autonomous conversion with certificate issuance for sovereign asset backing.",
+      "features": [
+        "XRPL + Stellar rails",
+        "Autonomous conversion",
+        "Certificate issuance",
+        "Gold-backed activation",
+        "Sovereign asset backing"
+      ],
+      "links": [
+        { "label": "Live Platform", "url": "https://helios5.netlify.app/" }
+      ],
+      "status": "live",
+      "category": "finance"
+    },
+    {
+      "id": "y3k-markets",
+      "name": "Y3K Markets",
+      "subtitle": "Y3K Markets",
+      "tagline": "Tokenized real-world asset infrastructure.",
+      "color": "#A855F7",
+      "colorName": "purple",
+      "emoji": "🟣",
+      "description": "Institutional-grade tokenized real-world asset infrastructure for structuring, issuing, and managing RWA-backed digital securities across multiple verticals.",
+      "features": [
+        "RWA tokenization",
+        "Multi-vertical coverage",
+        "Institutional-grade structuring",
+        "SPV-backed issuance",
+        "Digital securities management"
+      ],
+      "links": [
+        { "label": "Y3K Markets", "url": "https://y3kmarkets.com/#pricing" },
+        { "label": "Verticals", "url": "https://y3k-markets-web.pages.dev/#verticals" }
+      ],
+      "status": "live",
+      "category": "finance"
+    },
+    {
+      "id": "unykorn",
+      "name": "UNYKORN Sovereign Grid",
+      "subtitle": "Unykorn",
+      "tagline": "Sovereign grid infrastructure for decentralized operations.",
+      "color": "#22C55E",
+      "colorName": "green",
+      "emoji": "🟢",
+      "description": "Sovereign grid infrastructure powering decentralized coordination, governance, and operational architecture across distributed networks.",
+      "features": [
+        "Sovereign grid architecture",
+        "Decentralized coordination",
+        "Governance infrastructure",
+        "Distributed operations"
+      ],
+      "links": [
+        { "label": "Unykorn.org", "url": "https://unykorn.org/" },
+        { "label": "Sovereign Grid", "url": "https://unykorn-sovereign-grid.lovable.app/" }
+      ],
+      "status": "live",
+      "category": "infrastructure"
+    },
+    {
+      "id": "imperia",
+      "name": "Imperia Platform",
+      "subtitle": "Imperia Platform",
+      "tagline": "Sovereign command infrastructure for institutional operations.",
+      "color": "#EF4444",
+      "colorName": "red",
+      "emoji": "🔴",
+      "description": "Command-grade operational platform for institutional-level sovereign infrastructure management and deployment orchestration.",
+      "features": [
+        "Institutional operations",
+        "Sovereign command layer",
+        "Deployment orchestration",
+        "Infrastructure management"
+      ],
+      "links": [
+        { "label": "Live Platform", "url": "https://imperia-platform.netlify.app/" }
+      ],
+      "status": "live",
+      "category": "infrastructure"
+    },
+    {
+      "id": "optkas",
+      "name": "OPTKAS",
+      "subtitle": "OPTKAS",
+      "tagline": "Optimized capital structuring and tokenized allocation system.",
+      "color": "#F97316",
+      "colorName": "orange",
+      "emoji": "🟠",
+      "description": "Optimized capital structuring engine for tokenized allocation, deal architecture, and institutional capital flow management.",
+      "features": [
+        "Capital structuring",
+        "Tokenized allocation",
+        "Deal architecture",
+        "Institutional capital flows"
+      ],
+      "links": [
+        { "label": "Live Platform", "url": "https://optkas-tc.netlify.app/" }
+      ],
+      "status": "dev",
+      "category": "finance"
+    },
+    {
+      "id": "xxxiii",
+      "name": "Literary Protocol XXXIII",
+      "subtitle": "XXXIII",
+      "tagline": "Deterministic literary publishing anchored on-chain.",
+      "color": "#6366F1",
+      "colorName": "indigo",
+      "emoji": "📚",
+      "description": "Deterministic literary publishing infrastructure anchored on-chain. Cryptographic proof of authorship, immutable publication records, and sovereign intellectual property management.",
+      "features": [
+        "On-chain literary publishing",
+        "Cryptographic authorship proof",
+        "Immutable publication records",
+        "Sovereign IP management"
+      ],
+      "links": [
+        { "label": "XXXIII Library", "url": "https://xxxiii.io/library" }
+      ],
+      "status": "live",
+      "category": "publishing"
+    },
+    {
+      "id": "fth-university",
+      "name": "FTH University",
+      "subtitle": "FTH Trading University",
+      "tagline": "Institutional-grade education in deterministic systems.",
+      "color": "#14B8A6",
+      "colorName": "teal",
+      "emoji": "🎓",
+      "description": "Comprehensive education platform covering blockchain engineering, AI systems, deterministic finance, and institutional capital market architecture.",
+      "features": [
+        "Blockchain engineering curriculum",
+        "AI systems training",
+        "Deterministic finance education",
+        "Institutional architecture courses"
+      ],
+      "links": [
+        { "label": "University", "url": "https://fthtrading.github.io/University/" },
+        { "label": "AI Curriculum", "url": "https://fthtrading.github.io/AI/index.html" }
+      ],
+      "status": "live",
+      "category": "education"
+    },
+    {
+      "id": "kairos",
+      "name": "KAIROS",
+      "subtitle": "Sovereign AI Operating System",
+      "tagline": "Local sovereign AI OS with agentic RAG and voice runtime.",
+      "color": "#EC4899",
+      "colorName": "pink",
+      "emoji": "🧠",
+      "description": "KAIROS is the sovereign AI operating system — a local-first, deterministic AI runtime powering agentic RAG systems, voice interfaces (XTTS + Wake Word), and deterministic document intelligence. No cloud dependency. Full sovereignty.",
+      "features": [
+        "Local Sovereign AI Runtime",
+        "Agentic RAG Systems",
+        "Voice Runtime (XTTS + Wake Word)",
+        "Deterministic Document Intelligence",
+        "Zero cloud dependency",
+        "Full data sovereignty"
+      ],
+      "links": [
+        { "label": "Documentation", "url": "https://fthtrading.github.io/DOCS/" }
+      ],
+      "status": "live",
+      "category": "ai"
+    },
+    {
+      "id": "super-s",
+      "name": "SUPER-S",
+      "subtitle": "Sovereign Unified Protocol Engine — Research Series",
+      "tagline": "Unified protocol engine for sovereign research and simulation.",
+      "color": "#8B5CF6",
+      "colorName": "violet",
+      "emoji": "⚡",
+      "description": "Sovereign Unified Protocol Engine for research-grade simulation, protocol testing, and deterministic systems validation across the entire FTH ecosystem.",
+      "features": [
+        "Unified protocol engine",
+        "Research-grade simulation",
+        "Protocol testing framework",
+        "Deterministic validation"
+      ],
+      "links": [
+        { "label": "SUPER-S Platform", "url": "https://fthtrading.github.io/SUPER-S/" }
+      ],
+      "status": "internal",
+      "category": "research"
+    },
+    {
+      "id": "fth-docs",
+      "name": "FTH Documentation Hub",
+      "subtitle": "Sovereign Documentation Infrastructure",
+      "tagline": "Deterministic documentation and knowledge architecture.",
+      "color": "#64748B",
+      "colorName": "slate",
+      "emoji": "📄",
+      "description": "Centralized deterministic documentation infrastructure for all FTH ecosystem platforms, protocols, and sovereign systems.",
+      "features": [
+        "Ecosystem-wide documentation",
+        "Protocol specifications",
+        "API references",
+        "Architecture guides"
+      ],
+      "links": [
+        { "label": "Documentation Hub", "url": "https://fthtrading.github.io/DOCS/" }
+      ],
+      "status": "internal",
+      "category": "infrastructure"
+    },
+    {
+      "id": "usdf",
+      "name": "USDF Monetary Stack",
+      "subtitle": "Sovereign Digital Currency Engine",
+      "tagline": "Reserve-backed deterministic monetary policy across XRPL and Stellar.",
+      "color": "#10B981",
+      "colorName": "emerald",
+      "emoji": "💵",
+      "status": "testnet",
+      "description": "Reserve-backed sovereign digital currency engine. Deterministic mint/burn policy, reserve proof attestation, and multi-chain monetary operation across XRPL and Stellar with IPFS-backed audit trails.",
+      "features": [
+        "Deterministic mint/burn policy",
+        "Reserve proof attestation",
+        "XRPL + Stellar rails",
+        "IPFS attestation flow",
+        "Issuance & redemption lifecycle",
+        "Circulation management"
+      ],
+      "links": [
+        { "label": "Documentation", "url": "https://fthtrading.github.io/DOCS/" }
+      ],
+      "category": "capital"
+    },
+    {
+      "id": "asset-factory",
+      "name": "Asset Factory OS",
+      "subtitle": "Tokenization Pipeline",
+      "tagline": "End-to-end RWA tokenization with compliance-gated multi-chain deployment.",
+      "color": "#F59E0B",
+      "colorName": "amber",
+      "emoji": "🏭",
+      "status": "live",
+      "description": "Full-stack tokenization pipeline supporting ERC-721, ERC-1155, and ERC-3643 with NIL33 compliance gating. Multi-chain deployment to Polygon and XRPL.",
+      "features": [
+        "ERC-721 / 1155 / 3643 standards",
+        "NIL33 compliance gating",
+        "Multi-chain deployment",
+        "Polygon + XRPL targets",
+        "SPV-backed issuance",
+        "Digital securities lifecycle"
+      ],
+      "links": [
+        { "label": "Asset Factory", "url": "https://y3kmarkets.com/#pricing" }
+      ],
+      "category": "capital"
+    },
+    {
+      "id": "nil33-infra",
+      "name": "NIL33 Infrastructure",
+      "subtitle": "Zero-Knowledge Compliance Rail",
+      "tagline": "Privacy-preserving identity proofs and jurisdiction-aware compliance gating.",
+      "color": "#6366F1",
+      "colorName": "indigo",
+      "emoji": "🔐",
+      "status": "dev",
+      "description": "Zero-knowledge compliance rail providing KYC/AML gating, privacy-preserving identity proofs, jurisdiction-aware compliance logic, and institutional access control across the stack.",
+      "features": [
+        "KYC/AML compliance gating",
+        "Privacy-preserving ZK proofs",
+        "Jurisdiction-aware logic",
+        "Institutional access control",
+        "Identity credential management",
+        "Cross-system compliance rail"
+      ],
+      "links": [
+        { "label": "NIL33 Platform", "url": "https://nil33.com/" }
+      ],
+      "category": "compliance"
+    },
+    {
+      "id": "nil33-athlete",
+      "name": "NIL33 Athlete Intelligence",
+      "subtitle": "Athlete Market Valuation Engine",
+      "tagline": "NCAA-compliant athlete valuation across 14 sports with AI deal tracking.",
+      "color": "#EC4899",
+      "colorName": "pink",
+      "emoji": "🏆",
+      "status": "live",
+      "description": "Athlete-facing intelligence platform for market valuation, NCAA and 50-state compliance grounding, RAG knowledge base, 14-sport coverage, deal tracking, and multi-provider AI pipeline.",
+      "features": [
+        "Athlete market valuation",
+        "NCAA + 50-state compliance",
+        "RAG knowledge base",
+        "14-sport coverage",
+        "Deal tracking pipeline",
+        "Multi-provider AI"
+      ],
+      "links": [
+        { "label": "NIL33 Platform", "url": "https://nil33.com/" }
+      ],
+      "category": "intelligence"
+    },
+    {
+      "id": "gmiie",
+      "name": "GMIIE Intelligence",
+      "subtitle": "Market Surveillance & Intelligence Engine",
+      "tagline": "Institutional flow detection, sentiment analysis, and daily intelligence generation.",
+      "color": "#0EA5E9",
+      "colorName": "sky",
+      "emoji": "📡",
+      "status": "live",
+      "description": "Market surveillance platform providing sentiment analysis, institutional flow detection, and daily intelligence generation. Feeds the Kairos supervisory AI with market signal data.",
+      "features": [
+        "Market surveillance",
+        "Sentiment analysis",
+        "Institutional flow detection",
+        "Daily intelligence generation",
+        "Kairos integration",
+        "Real-time signal processing"
+      ],
+      "links": [
+        { "label": "Documentation", "url": "https://fthtrading.github.io/DOCS/" }
+      ],
+      "category": "intelligence"
+    },
+    {
+      "id": "dics",
+      "name": "DICS Compliance Intelligence",
+      "subtitle": "Compliance Monitoring & Threat Detection",
+      "tagline": "Automated sanctions screening, transaction monitoring, and compliance reporting.",
+      "color": "#EF4444",
+      "colorName": "red",
+      "emoji": "🛡️",
+      "status": "live",
+      "description": "Compliance monitoring and threat detection system with automated sanctions screening, transaction monitoring, and compliance reporting. Integrates with NIL33 and Kairos for full-stack coverage.",
+      "features": [
+        "Compliance monitoring",
+        "Threat detection",
+        "Sanctions screening",
+        "Transaction monitoring",
+        "Automated reporting",
+        "Kairos + NIL33 integration"
+      ],
+      "links": [
+        { "label": "Documentation", "url": "https://fthtrading.github.io/DOCS/" }
+      ],
+      "category": "intelligence"
+    },
+    {
+      "id": "anchor-broadcast",
+      "name": "Anchor Broadcast Network",
+      "subtitle": "Cross-Chain Proof Settlement",
+      "tagline": "Merkle anchor propagation across XRPL, Polygon, and Stellar.",
+      "color": "#7C3AED",
+      "colorName": "violet",
+      "emoji": "⚓",
+      "status": "live",
+      "description": "Cross-chain proof settlement and propagation network. Broadcasts Merkle anchors, formats chain-specific transactions, manages confirmation tracking, and synchronizes proof publication across XRPL, Polygon, and Stellar.",
+      "features": [
+        "Merkle anchor broadcasting",
+        "Gas optimization",
+        "Confirmation tracking",
+        "XRPL / Polygon / Stellar",
+        "Proof synchronization",
+        "Chain-specific formatting"
+      ],
+      "links": [
+        { "label": "Documentation", "url": "https://fthtrading.github.io/DOCS/" }
+      ],
+      "category": "governance"
+    },
+    {
+      "id": "sovereign-vault",
+      "name": "Sovereign Vault",
+      "subtitle": "Key & Secret Management",
+      "tagline": "HSM-backed root trust layer managing signing keys, TLS, and cert chains.",
+      "color": "#D97706",
+      "colorName": "amber",
+      "emoji": "🔑",
+      "status": "live",
+      "description": "Key and secret management system with HSM-backed design. Manages signing keys, TLS certificates, API secrets, and cert chains. Root trust layer for the entire infrastructure stack.",
+      "features": [
+        "HSM-backed design",
+        "Signing key management",
+        "TLS certificate management",
+        "API secrets storage",
+        "Cert chain management",
+        "Root trust authority"
+      ],
+      "links": [
+        { "label": "Documentation", "url": "https://fthtrading.github.io/DOCS/" }
+      ],
+      "category": "infrastructure"
+    },
+    {
+      "id": "l1-protocol",
+      "name": "L1 Protocol Layer",
+      "subtitle": "Canonical Rules & Node Synchronization",
+      "tagline": "Canonical schemas, communication standards, and gRPC/WebSocket node sync.",
+      "color": "#1D4ED8",
+      "colorName": "blue",
+      "emoji": "⛓️",
+      "status": "live",
+      "description": "Canonical protocol rules and schemas defining communication standards, node synchronization, and inter-service contracts across the infrastructure. gRPC / WebSocket / TLS stack.",
+      "features": [
+        "Canonical protocol rules",
+        "Schema definitions",
+        "Communication standards",
+        "Node synchronization",
+        "gRPC + WebSocket stack",
+        "TLS enforcement"
+      ],
+      "links": [
+        { "label": "Documentation", "url": "https://fthtrading.github.io/DOCS/" }
+      ],
+      "category": "infrastructure"
+    },
+    {
+      "id": "lps1",
+      "name": "LPS-1 Publishing Protocol",
+      "subtitle": "Deterministic Literary Publishing",
+      "tagline": "Merkle-anchored publication lifecycle with smart contract-backed provenance.",
+      "color": "#059669",
+      "colorName": "emerald",
+      "emoji": "📜",
+      "status": "live",
+      "description": "Deterministic publishing pipeline with edition provenance, Merkle-anchored publication lifecycle, and smart contract-backed literary protocol. Immutable on-chain authorship and publication records.",
+      "features": [
+        "Deterministic publishing pipeline",
+        "Edition provenance tracking",
+        "Merkle-anchored lifecycle",
+        "Smart contract backing",
+        "Immutable authorship records",
+        "Publication audit trail"
+      ],
+      "links": [
+        { "label": "LPS-1 Protocol", "url": "https://xxxiii.io/library" }
+      ],
+      "category": "publishing"
+    },
+    {
+      "id": "sunfarm",
+      "name": "SunFarm Energy Layer",
+      "subtitle": "Tokenized Renewable Energy Infrastructure",
+      "tagline": "IoT-connected solar production feeds REC issuance and token rails.",
+      "color": "#FBBF24",
+      "colorName": "yellow",
+      "emoji": "☀️",
+      "status": "testnet",
+      "description": "Tokenized renewable energy infrastructure connecting IoT production data to REC issuance and digital token rails. Time-series oriented with MQTT and TimescaleDB-style architecture.",
+      "features": [
+        "IoT production feeds",
+        "REC issuance",
+        "Token rails integration",
+        "Time-series data",
+        "MQTT connectivity",
+        "Physical-to-digital bridge"
+      ],
+      "links": [
+        { "label": "Helios Platform", "url": "https://helios5.netlify.app/" }
+      ],
+      "category": "energy"
+    },
+    {
+      "id": "spectral-ledger",
+      "name": "Spectral Ledger",
+      "subtitle": "AR NFT Hunting System",
+      "tagline": "GPS-anchored AR NFT discovery with on-chain minting via geohash.",
+      "color": "#A78BFA",
+      "colorName": "violet",
+      "emoji": "🌀",
+      "status": "dev",
+      "description": "Augmented reality NFT hunting system using GPS/geohash positioning and on-chain minting. Game-like mobile/PWA system for location-based digital asset discovery.",
+      "features": [
+        "AR NFT hunting",
+        "GPS / geohash anchoring",
+        "On-chain minting",
+        "Mobile/PWA system",
+        "Location-based discovery",
+        "Proof-of-location"
+      ],
+      "links": [
+        { "label": "Documentation", "url": "https://fthtrading.github.io/DOCS/" }
+      ],
+      "category": "cultural"
+    },
+    {
+      "id": "drone-gnc",
+      "name": "Drone GNC Framework",
+      "subtitle": "UAV Guidance, Navigation & Control",
+      "tagline": "Aerospace-grade simulation and estimation tooling for autonomous UAVs.",
+      "color": "#64748B",
+      "colorName": "slate",
+      "emoji": "🚁",
+      "status": "dev",
+      "description": "UAV guidance, navigation, and control research environment with aerospace-grade simulation tooling. Deterministic estimation and control frameworks separate from the capital stack.",
+      "features": [
+        "UAV guidance systems",
+        "Navigation & estimation",
+        "Aerospace simulation",
+        "Control frameworks",
+        "Deterministic modeling",
+        "Research environment"
+      ],
+      "links": [
+        { "label": "Documentation", "url": "https://fthtrading.github.io/DOCS/" }
+      ],
+      "category": "research"
+    },
+    {
+      "id": "mens-of-god",
+      "name": "Mens of God",
+      "subtitle": "Faith-Based Community Platform",
+      "tagline": "Faith-first community platform isolated from financial infrastructure.",
+      "color": "#78350F",
+      "colorName": "amber",
+      "emoji": "✝️",
+      "status": "live",
+      "description": "Faith-based community platform explicitly isolated from financial infrastructure. Independent brand extension operating on its own stack with no capital stack dependencies.",
+      "features": [
+        "Community platform",
+        "Faith-based content",
+        "Independent infrastructure",
+        "Isolated from capital stack",
+        "Dedicated brand experience"
+      ],
+      "links": [
+        { "label": "Mens of God", "url": "https://mensofgod.com/" }
+      ],
+      "category": "cultural"
+    },
+    {
+      "id": "drunks-app",
+      "name": "Drunks App",
+      "subtitle": "Experimental Social Platform",
+      "tagline": "Brand extension social experiment. Isolated. Staging.",
+      "color": "#F97316",
+      "colorName": "orange",
+      "emoji": "🍺",
+      "status": "staging",
+      "description": "Experimental social platform operating as a separate brand extension. Isolated from institutional stack with no capital infrastructure dependencies.",
+      "features": [
+        "Social platform",
+        "Brand extension",
+        "Separate infrastructure",
+        "Isolated from capital stack"
+      ],
+      "links": [
+        { "label": "Documentation", "url": "https://fthtrading.github.io/DOCS/" }
+      ],
+      "category": "cultural"
+    }
+  ],
+  "capabilities": [
+    "Multi-chain settlement architecture",
+    "Tokenized capital market infrastructure",
+    "On-chain anchoring & cryptographic auditability",
+    "RWA structuring & SPV-backed issuance",
+    "AI-powered compliance validation",
+    "Sovereign OS runtime design",
+    "Research-grade economic simulations",
+    "Institutional-grade deal architecture",
+    "Agentic RAG systems & document intelligence",
+    "Voice AI runtime (XTTS + Wake Word)",
+    "Deterministic execution environments",
+    "MCP agentic marketing infrastructure",
+    "Global commodity sourcing & structuring",
+    "Compliance intelligence (OFAC/AML/export controls)",
+    "110-point algorithmic credit scoring",
+    "Regenerative supply chain certification"
+  ],
+  "differentiators": [
+    { "contrast": "You don't build dApps.", "reality": "You build infrastructure layers." },
+    { "contrast": "You don't launch tokens.", "reality": "You design execution environments." },
+    { "contrast": "You don't simulate ideas.", "reality": "You anchor proofs on-chain." },
+    { "contrast": "You don't follow frameworks.", "reality": "You engineer sovereign runtimes." },
+    { "contrast": "You don't pitch promises.", "reality": "You build systems that remove discretionary trust." }
+  ],
+  "research": [
+    {
+      "title": "Genesis Protocol: Deterministic Multi-Agent Economic Simulation",
+      "platform": "Zenodo",
+      "url": "https://zenodo.org/records/18729652",
+      "description": "5,680 simulated worlds with zero collapse — research-grade computational macroeconomics."
+    }
+  ],
+  "social": {
+    "github": "https://github.com/fthtrading",
+    "zenodo": "https://zenodo.org/records/18729652",
+    "linkedin": "https://www.linkedin.com/in/kevan-burns-842827389/",
+    "x": "https://x.com/Unykornenergy",
+    "orcid": "https://orcid.org/"
+  },
+  "ipfs": {
+    "cid": "bafybeiaxwvryhtbpslxnzptnbhksekv2l27gkdmtvzyvsr7ddbumlydrdm",
+    "ipns": "k51qzi5uqu5dm6qsf1hqk4bgq4y0t53trzekg5vzfl8080j1yh334aira0fgqn",
+    "peerId": "12D3KooWS2kwSctr6Lbxw2BZrEpAKQEwpaX1KnwDUSTxC3EKZd6E",
+    "gateway": "https://ipfs.io/ipfs/bafybeiaxwvryhtbpslxnzptnbhksekv2l27gkdmtvzyvsr7ddbumlydrdm",
+    "localGateway": "http://127.0.0.1:8081/ipfs/bafybeiaxwvryhtbpslxnzptnbhksekv2l27gkdmtvzyvsr7ddbumlydrdm",
+    "dweb": "https://bafybeiaxwvryhtbpslxnzptnbhksekv2l27gkdmtvzyvsr7ddbumlydrdm.ipfs.dweb.link"
+  }
+}
