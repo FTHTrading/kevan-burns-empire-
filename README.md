@@ -18,60 +18,49 @@
 
 ---
 
-## � Live Links — Copy & Paste
+## 🔗 Live Links — Copy & Paste
 
-> Every live URL in the ecosystem. Click to visit, or copy the raw URL.
+> Every live URL in the ecosystem. Copy any line directly.
 
-### ⚡ Flagship Sites
+```
+── PORTFOLIO ──────────────────────────────────────────────────
+https://portfolio.unykorn.org/
+https://portfolio.unykorn.org/systems/
+https://portfolio.unykorn.org/control/
+https://portfolio.unykorn.org/blog/
+https://portfolio.unykorn.org/services/
+https://portfolio.unykorn.org/press/
 
-| System | URL |
-|--------|-----|
-| 🏛️ **FTH Trading Platform** | https://fth-os.netlify.app/ |
-| 🧬 **Genesis Protocol** | https://genesis.unykorn.org/ |
-| ☀️ **Helios Digital** | https://heliosdigital.xyz/ |
-| 🦄 **UNYKORN Sovereign Grid** | https://unykorn.org/ |
-| 🏰 **Imperia Platform** | https://imperia-platform.netlify.app/ |
-| 🏦 **OPTKAS** | https://optkas.org/ |
-| 📊 **GMIIE** | https://xxxiii-io.pages.dev/ |
-| 🏟️ **NIL33 Athlete Intelligence** | https://nil33.com/ |
+── FLAGSHIPS ──────────────────────────────────────────────────
+https://fth-os.netlify.app/                  FTH Trading Platform
+https://genesis.unykorn.org/                 Genesis Protocol
+https://heliosdigital.xyz/                   Helios Digital
+https://unykorn.org/                         UNYKORN Sovereign Grid
+https://imperia-platform.netlify.app/        Imperia Platform
+https://optkas.org/                          OPTKAS
+https://xxxiii-io.pages.dev/                 GMIIE
+https://nil33.com/                           NIL33 Athlete Intelligence
 
-### 🌐 All Live URLs
+── LIVE SYSTEMS ───────────────────────────────────────────────
+https://y3kmarkets.com/                      Y3K Markets
+https://xxxiii.io/library                    XXXIII Capital Layer
+https://docs.unykorn.org/                    Doc Intelligence Engine
+https://fthtrading.github.io/University/     Fitzherbert University
+https://fthtrading.github.io/boutique/       FTH Commodity Platform
+https://mensofgod.com/                       Mens of God
+https://super-s.pages.dev/                   SUPER-S Infrastructure Guide
+https://dr.optkas.org/                       DR Infrastructure Convergence
+https://ram.unykorn.org/                     RAMMADDIPATI Protocol
+https://x402.unykorn.org/                    x402 Protocol
+https://gold.unykorn.org/                    AurumGram (AURG)
+https://avax.unykorn.org/                    UNY Token
+https://needai.y3kmarkets.com/              NEED AI
+https://drunks.app/                          Drunks App
+https://fthtrading.github.io/X407/           X407
 
-| System | URL |
-|--------|-----|
-| Y3K Markets | https://y3kmarkets.com/ |
-| XXXIII Capital Layer | https://xxxiii.io/library |
-| Doc Intelligence Engine | https://docs.unykorn.org/ |
-| Fitzherbert University | https://fthtrading.github.io/University/ |
-| FTH Commodity Platform | https://fthtrading.github.io/boutique/ |
-| Mens of God | https://mensofgod.com/ |
-| SUPER-S Infrastructure Guide | https://super-s.pages.dev/ |
-| DR Infrastructure Convergence | https://dr.optkas.org/ |
-| RAMMADDIPATI Protocol | https://ram.unykorn.org/ |
-| x402 Protocol | https://x402.unykorn.org/ |
-| AurumGram (AURG) | https://gold.unykorn.org/ |
-| Vaughan Capital Advisory | https://mensofgod.com/ |
-| UNY Token | https://avax.unykorn.org/ |
-| NEED AI | https://needai.y3kmarkets.com/ |
-| Drunks App | https://drunks.app/ |
-| X407 | https://fthtrading.github.io/X407/ |
-
-### 🖥️ This Portfolio
-
-| Page | URL |
-|------|-----|
-| Home | https://portfolio.unykorn.org/ |
-| Atlas (all 58 systems) | https://portfolio.unykorn.org/systems/ |
-| Control Plane | https://portfolio.unykorn.org/control/ |
-| Blog | https://portfolio.unykorn.org/blog/ |
-| Services | https://portfolio.unykorn.org/services/ |
-| Press | https://portfolio.unykorn.org/press/ |
-
-### 📂 GitHub Repos
-
-| Repo | URL |
-|------|-----|
-| This repo | https://github.com/FTHTrading/kevan-burns-empire- |
+── GITHUB ─────────────────────────────────────────────────────
+https://github.com/FTHTrading/kevan-burns-empire-
+```
 
 ---
 
