@@ -1,72 +1,83 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // platformMetrics.ts — single computation layer.
 //
-// ALL display components that need platform counts, status breakdowns,
-// or the hero metric strip must import from here — never from platforms.json
-// directly (except for the raw platform records themselves via `platforms`).
+// ALL display components that need system counts, maturity breakdowns,
+// or the hero metric strip must import from here.
 //
+// Data source: src/content/systems.ts (58 canonical systems).
 // Computed values are derived at module load (side-effect free).
 // ─────────────────────────────────────────────────────────────────────────────
 
-import platformsData from '@/data/platforms.json';
+import { systems } from '@/content/systems';
 import { businessMetrics } from '@/data/businessMetrics';
-import type {
-  Platform,
-  PlatformStatus,
-  PlatformCategory,
-  ComputedPlatformMetrics,
-  HeroMetric,
-} from '@/types/platform';
+import type { MaturityLevel, SystemCategory } from '@/types/system';
+import type { HeroMetric } from '@/types/platform';
 
 /**
- * Typed platform records. Cast is safe because audit-platforms.mjs validates
- * the JSON shape at runtime and tsc validates it at compile time via this cast.
+ * Full system registry — 58 canonical systems from the master registry.
  */
-export const platforms = platformsData.platforms as Platform[];
+export { systems };
 
-// ── Counts by status ─────────────────────────────────────────────────────────
+// ── Counts by maturity ───────────────────────────────────────────────────────
 
-const countByStatus = platforms.reduce<Partial<Record<PlatformStatus, number>>>(
-  (acc, p) => {
-    acc[p.status] = (acc[p.status] ?? 0) + 1;
+const countByMaturity = systems.reduce<Partial<Record<MaturityLevel, number>>>(
+  (acc, s) => {
+    acc[s.maturity] = (acc[s.maturity] ?? 0) + 1;
     return acc;
   },
   {}
 );
 
-const statusCount = (s: PlatformStatus): number => countByStatus[s] ?? 0;
+const maturityCount = (m: MaturityLevel): number => countByMaturity[m] ?? 0;
 
 // ── Counts by category ───────────────────────────────────────────────────────
 
-const countByCategory = platforms.reduce<Partial<Record<PlatformCategory, number>>>(
-  (acc, p) => {
-    acc[p.category] = (acc[p.category] ?? 0) + 1;
+const countByCategory = systems.reduce<Partial<Record<SystemCategory, number>>>(
+  (acc, s) => {
+    acc[s.category] = (acc[s.category] ?? 0) + 1;
     return acc;
   },
   {}
 );
 
 // ── Hero metric strip ────────────────────────────────────────────────────────
-// Computed values first; manual business metrics clearly labelled.
 
 export const heroMetrics: HeroMetric[] = [
-  { label: 'Systems Built',    value: platforms.length,                        suffix: ''  },
-  { label: 'Production',       value: statusCount('live'),                     suffix: ''  },
-  { label: 'Chains Integrated',value: businessMetrics.chainsIntegrated,        suffix: '+' },
-  { label: 'Worlds Simulated', value: businessMetrics.worldsSimulated,         suffix: ''  },
-  { label: 'Undefined Failures',value: businessMetrics.undefinedFailures,      suffix: ''  },
+  { label: 'Systems Built',     value: systems.length,                          suffix: ''  },
+  { label: 'Production',        value: maturityCount('live') + maturityCount('production'), suffix: ''  },
+  { label: 'Chains Integrated', value: businessMetrics.chainsIntegrated,        suffix: '+' },
+  { label: 'Worlds Simulated',  value: businessMetrics.worldsSimulated,         suffix: ''  },
+  { label: 'Undefined Failures',value: businessMetrics.undefinedFailures,       suffix: ''  },
 ];
 
 // ── Full metrics object (imported by PlatformsGrid, other consumers) ─────────
 
-export const platformMetrics: ComputedPlatformMetrics = {
-  total:    platforms.length,
-  live:     statusCount('live'),
-  testnet:  statusCount('testnet'),
-  dev:      statusCount('dev'),
-  staging:  statusCount('staging'),
-  internal: statusCount('internal'),
-  byStatus:   countByStatus,
-  byCategory: countByCategory,
+export interface SystemMetrics {
+  total: number;
+  live: number;
+  testnet: number;
+  prototype: number;
+  thesis: number;
+  designed: number;
+  internal: number;
+  pilot: number;
+  auditMode: number;
+  byMaturity: Partial<Record<MaturityLevel, number>>;
+  byCategory: Partial<Record<SystemCategory, number>>;
+  heroMetrics: HeroMetric[];
+}
+
+export const platformMetrics: SystemMetrics = {
+  total:     systems.length,
+  live:      maturityCount('live') + maturityCount('production'),
+  testnet:   maturityCount('testnet'),
+  prototype: maturityCount('prototype'),
+  thesis:    maturityCount('thesis'),
+  designed:  maturityCount('designed'),
+  internal:  maturityCount('internal'),
+  pilot:     maturityCount('pilot'),
+  auditMode: maturityCount('audit-mode'),
+  byMaturity:  countByMaturity,
+  byCategory:  countByCategory,
   heroMetrics,
 };

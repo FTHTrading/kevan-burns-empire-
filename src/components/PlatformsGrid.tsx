@@ -4,78 +4,72 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, ChevronRight, Filter } from 'lucide-react';
 import { useView } from '@/context/ViewContext';
-import { platforms, platformMetrics } from '@/lib/platformMetrics';
-import type { PlatformStatus, PlatformCategory } from '@/types/platform';
+import { systems, platformMetrics } from '@/lib/platformMetrics';
+import type { MaturityLevel, SystemCategory } from '@/types/system';
+import { CATEGORY_LABELS } from '@/types/system';
 
-const categoryLabels: Record<PlatformCategory, string> = {
-  infrastructure: 'Infrastructure',
-  research: 'Research',
-  finance: 'Finance',
-  ai: 'AI Systems',
-  publishing: 'Publishing',
-  education: 'Education',
-  capital: 'Capital',
-  intelligence: 'Intelligence',
-  compliance: 'Compliance',
-  governance: 'Governance',
-  energy: 'Energy & RWA',
-  cultural: 'Cultural',
-  revenue: 'Revenue',
+const maturityConfig: Record<MaturityLevel, { label: string; color: string; bg: string; dot: string }> = {
+  live:         { label: 'LIVE',       color: '#22C55E', bg: '#22C55E15', dot: '#22C55E' },
+  production:   { label: 'PRODUCTION', color: '#10B981', bg: '#10B98115', dot: '#10B981' },
+  testnet:      { label: 'TESTNET',    color: '#F59E0B', bg: '#F59E0B15', dot: '#F59E0B' },
+  pilot:        { label: 'PILOT',      color: '#22D3EE', bg: '#22D3EE15', dot: '#22D3EE' },
+  prototype:    { label: 'PROTOTYPE',  color: '#A78BFA', bg: '#A78BFA15', dot: '#A78BFA' },
+  designed:     { label: 'DESIGNED',   color: '#818CF8', bg: '#818CF815', dot: '#818CF8' },
+  thesis:       { label: 'THESIS',     color: '#64748B', bg: '#64748B15', dot: '#64748B' },
+  internal:     { label: 'INTERNAL',   color: '#6B7280', bg: '#6B728015', dot: '#6B7280' },
+  'audit-mode': { label: 'AUDIT',      color: '#EF4444', bg: '#EF444415', dot: '#EF4444' },
+  archived:     { label: 'ARCHIVED',   color: '#6B7280', bg: '#6B728015', dot: '#6B7280' },
 };
 
-const statusConfig: Record<PlatformStatus, { label: string; color: string; bg: string; dot: string }> = {
-  live:     { label: 'LIVE',      color: '#22C55E', bg: '#22C55E15', dot: '#22C55E' },
-  testnet:  { label: 'TESTNET',   color: '#F59E0B', bg: '#F59E0B15', dot: '#F59E0B' },
-  dev:      { label: 'IN DEV',    color: '#3B82F6', bg: '#3B82F615', dot: '#3B82F6' },
-  staging:  { label: 'STAGING',  color: '#F97316', bg: '#F9731615', dot: '#F97316' },
-  internal: { label: 'INTERNAL', color: '#6B7280', bg: '#6B728015', dot: '#6B7280' },
-  audit:    { label: 'AUDIT',    color: '#A855F7', bg: '#A855F715', dot: '#A855F7' },
-};
-
-const CATEGORY_FILTERS: Array<{ id: 'all' | PlatformCategory; label: string }> = [
+const CATEGORY_FILTERS: Array<{ id: 'all' | SystemCategory; label: string }> = [
   { id: 'all', label: 'All Systems' },
-  { id: 'infrastructure', label: 'Infrastructure' },
-  { id: 'capital', label: 'Capital' },
-  { id: 'intelligence', label: 'Intelligence' },
-  { id: 'governance', label: 'Governance' },
-  { id: 'compliance', label: 'Compliance' },
-  { id: 'energy', label: 'Energy & RWA' },
-  { id: 'research', label: 'Research' },
-  { id: 'publishing', label: 'Publishing' },
-  { id: 'cultural', label: 'Cultural' },
-  { id: 'finance', label: 'Finance' },
-  { id: 'ai', label: 'AI Systems' },
-  { id: 'education', label: 'Education' },
+  { id: 'capital-infrastructure', label: 'Capital' },
+  { id: 'ai-supervisory-intelligence', label: 'AI Systems' },
+  { id: 'compliance-identity-governance', label: 'Compliance' },
+  { id: 'tokenization-rwa', label: 'Tokenization / RWA' },
+  { id: 'protocol-service-mesh', label: 'Protocol' },
+  { id: 'experimental-research', label: 'Research' },
+  { id: 'education-media-community', label: 'Education / Media' },
+  { id: 'monetary-systems', label: 'Monetary' },
+  { id: 'market-intelligence-analytics', label: 'Intelligence' },
+  { id: 'internal-operations', label: 'Internal Ops' },
+  { id: 'cross-chain-settlement', label: 'Cross-Chain' },
+  { id: 'sports-nil-athlete', label: 'Sports / NIL' },
+  { id: 'publishing-ip', label: 'Publishing' },
+  { id: 'energy-sustainability', label: 'Energy' },
 ];
 
-const STATUS_FILTERS: Array<{ id: 'all' | PlatformStatus; label: string }> = [
-  { id: 'all',      label: 'All Status' },
-  { id: 'live',     label: 'LIVE'     },
-  { id: 'testnet',  label: 'TESTNET'  },
-  { id: 'dev',      label: 'IN DEV'   },
-  { id: 'staging',  label: 'STAGING'  },
-  { id: 'internal', label: 'INTERNAL' },
+const MATURITY_FILTERS: Array<{ id: 'all' | MaturityLevel; label: string }> = [
+  { id: 'all',         label: 'All Status'  },
+  { id: 'live',        label: 'LIVE'        },
+  { id: 'production',  label: 'PRODUCTION'  },
+  { id: 'testnet',     label: 'TESTNET'     },
+  { id: 'pilot',       label: 'PILOT'       },
+  { id: 'prototype',   label: 'PROTOTYPE'   },
+  { id: 'designed',    label: 'DESIGNED'    },
+  { id: 'thesis',      label: 'THESIS'      },
+  { id: 'internal',    label: 'INTERNAL'    },
+  { id: 'audit-mode',  label: 'AUDIT'       },
 ];
 
 export default function PlatformsGrid() {
   const { viewMode } = useView();
-  const [activeCategory, setActiveCategory] = useState<'all' | PlatformCategory>('all');
-  const [activeStatus, setActiveStatus] = useState<'all' | PlatformStatus>('all');
+  const [activeCategory, setActiveCategory] = useState<'all' | SystemCategory>('all');
+  const [activeMaturity, setActiveMaturity] = useState<'all' | MaturityLevel>('all');
 
-  const filtered = platforms.filter((p) => {
-    const catMatch = activeCategory === 'all' || p.category === activeCategory;
-    const statusMatch = activeStatus === 'all' || p.status === activeStatus;
-    return catMatch && statusMatch;
+  const filtered = systems.filter((s) => {
+    const catMatch = activeCategory === 'all' || s.category === activeCategory;
+    const matMatch = activeMaturity === 'all' || s.maturity === activeMaturity;
+    return catMatch && matMatch;
   });
 
-  // All counts come from the single computation layer — no inline math here.
-  const { total: totalCount, live: liveCount, testnet: testnetCount, dev: devCount } = platformMetrics;
+  const { total: totalCount, live: liveCount, testnet: testnetCount, prototype: protoCount } = platformMetrics;
 
   const statsStrip = [
     { label: 'Systems Built', value: String(totalCount) },
     { label: 'Production',    value: String(liveCount)  },
     { label: 'Testnet',       value: String(testnetCount) },
-    { label: 'In Dev',        value: String(devCount)   },
+    { label: 'Prototype',     value: String(protoCount) },
     { label: 'Chains',        value: '13+'              },
   ];
 
@@ -94,10 +88,10 @@ export default function PlatformsGrid() {
             {viewMode === 'creative' ? '🌐 Core Platforms' : 'Sovereign Systems Index'}
           </h2>
           <p className="text-[#8888a0] text-lg max-w-2xl mx-auto">
-            {totalCount} systems. {liveCount} production. 3 integrated chains. One vertically integrated sovereign stack.
+            {totalCount} systems. {liveCount} production. 13+ integrated chains. One vertically integrated sovereign stack.
           </p>
 
-          {/* Stats strip — data-driven from platforms.json */}
+          {/* Stats strip — data-driven from systems registry */}
           <div className="flex flex-wrap justify-center gap-6 mt-8 mb-2">
             {statsStrip.map((s) => (
               <div key={s.label} className="text-center">
@@ -136,13 +130,13 @@ export default function PlatformsGrid() {
 
           {/* Status Filter */}
           <div className="flex items-center gap-2 flex-wrap pl-5">
-            {STATUS_FILTERS.map((f) => {
-              const cfg = f.id !== 'all' ? statusConfig[f.id] : null;
-              const isActive = activeStatus === f.id;
+            {MATURITY_FILTERS.map((f) => {
+              const cfg = f.id !== 'all' ? maturityConfig[f.id] : null;
+              const isActive = activeMaturity === f.id;
               return (
                 <button
                   key={f.id}
-                  onClick={() => setActiveStatus(f.id)}
+                  onClick={() => setActiveMaturity(f.id)}
                   className={`text-xs px-3 py-1 rounded-full border transition-all flex items-center gap-1.5 ${
                     isActive
                       ? 'border-opacity-80 text-white'
@@ -175,24 +169,24 @@ export default function PlatformsGrid() {
         {/* Platform Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout">
-            {filtered.map((platform, index) => {
-              const statusKey: PlatformStatus = platform.status;
-              const statusCfg = statusConfig[statusKey];
+            {filtered.map((system, index) => {
+              const matKey: MaturityLevel = system.maturity;
+              const matCfg = maturityConfig[matKey];
               return (
                 <motion.div
-                  key={platform.id}
+                  key={system.id}
                   layout
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4, delay: index * 0.03 }}
                   className="platform-card group relative rounded-xl border border-[#1e1e2e] bg-[#12121a] hover:border-opacity-60 overflow-hidden"
-                  style={{ ['--card-color' as string]: platform.color }}
+                  style={{ ['--card-color' as string]: system.color }}
                 >
                   {/* Top color accent */}
                   <div
                     className="absolute top-0 left-0 right-0 h-[2px]"
-                    style={{ background: `linear-gradient(90deg, transparent, ${platform.color}, transparent)` }}
+                    style={{ background: `linear-gradient(90deg, transparent, ${system.color}, transparent)` }}
                   />
 
                   <div className="p-6">
@@ -200,50 +194,50 @@ export default function PlatformsGrid() {
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
-                          <span className="text-xl">{platform.emoji}</span>
+                          <span className="text-xl">{system.emoji}</span>
                           <span
                             className="text-xs font-medium px-2 py-0.5 rounded-full uppercase tracking-wider"
                             style={{
-                              backgroundColor: `${platform.color}15`,
-                              color: platform.color,
+                              backgroundColor: `${system.color}15`,
+                              color: system.color,
                             }}
                           >
-                            {categoryLabels[platform.category] ?? platform.category}
+                            {CATEGORY_LABELS[system.category] ?? system.category}
                           </span>
                         </div>
                         <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                          {platform.name}
+                          {system.name}
                         </h3>
-                        <p className="text-sm text-[#8888a0]">{platform.subtitle}</p>
+                        <p className="text-sm text-[#8888a0]">{system.subtitle}</p>
                       </div>
 
-                      {/* Status Badge */}
+                      {/* Maturity Badge */}
                       <span
                         className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest shrink-0 ml-2 flex items-center gap-1"
-                        style={{ backgroundColor: statusCfg.bg, color: statusCfg.color, border: `1px solid ${statusCfg.color}30` }}
+                        style={{ backgroundColor: matCfg.bg, color: matCfg.color, border: `1px solid ${matCfg.color}30` }}
                       >
                         <span
                           className="w-1.5 h-1.5 rounded-full"
-                          style={{ backgroundColor: statusCfg.dot, boxShadow: statusKey === 'live' ? `0 0 4px ${statusCfg.dot}` : 'none' }}
+                          style={{ backgroundColor: matCfg.dot, boxShadow: matKey === 'live' || matKey === 'production' ? `0 0 4px ${matCfg.dot}` : 'none' }}
                         />
-                        {statusCfg.label}
+                        {matCfg.label}
                       </span>
                     </div>
 
                     {/* Tagline */}
-                    <p className="text-sm font-medium mb-3" style={{ color: platform.color }}>
-                      {platform.tagline}
+                    <p className="text-sm font-medium mb-3" style={{ color: system.color }}>
+                      {system.tagline}
                     </p>
 
                     {/* Description */}
-                    <p className="text-sm text-[#8888a0] leading-relaxed mb-4">
-                      {platform.description}
+                    <p className="text-sm text-[#8888a0] leading-relaxed mb-4 line-clamp-3">
+                      {system.description}
                     </p>
 
                     {/* Features */}
                     {viewMode === 'institutional' && (
                       <div className="flex flex-wrap gap-1.5 mb-4">
-                        {platform.features.slice(0, 4).map((feature) => (
+                        {system.features.slice(0, 4).map((feature) => (
                           <span
                             key={feature}
                             className="text-xs px-2 py-1 rounded border border-[#1e1e2e] text-[#8888a0] bg-[#0a0a0f]"
@@ -251,9 +245,9 @@ export default function PlatformsGrid() {
                             {feature}
                           </span>
                         ))}
-                        {platform.features.length > 4 && (
+                        {system.features.length > 4 && (
                           <span className="text-xs px-2 py-1 text-[#8888a0]">
-                            +{platform.features.length - 4} more
+                            +{system.features.length - 4} more
                           </span>
                         )}
                       </div>
@@ -261,7 +255,7 @@ export default function PlatformsGrid() {
 
                     {/* Links */}
                     <div className="flex flex-col gap-2 pt-4 border-t border-[#1e1e2e]">
-                      {platform.links.map((link) => (
+                      {system.links.map((link) => (
                         <a
                           key={link.url}
                           href={link.url}
@@ -290,7 +284,7 @@ export default function PlatformsGrid() {
           >
             <p className="text-lg">No systems match the selected filters.</p>
             <button
-              onClick={() => { setActiveCategory('all'); setActiveStatus('all'); }}
+              onClick={() => { setActiveCategory('all'); setActiveMaturity('all'); }}
               className="mt-4 text-sm text-blue-400 hover:text-blue-300 underline"
             >
               Clear filters

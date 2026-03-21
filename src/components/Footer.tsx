@@ -1,9 +1,10 @@
 'use client';
 
 import { ExternalLink, HardDrive, Tag, Clock, Github } from 'lucide-react';
+import { systems } from '@/content/systems';
 import platformsData from '@/data/platforms.json';
 
-const { platforms, social, ipfs } = platformsData;
+const { social, ipfs } = platformsData;
 
 const BUILD_VERSION = 'v1.0.0';
 const BUILD_TIMESTAMP = new Date().toISOString();
@@ -27,16 +28,16 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Systems Index</h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-              {platforms.map((platform) => (
+              {systems.map((system) => (
                 <a
-                  key={platform.id}
-                  href={platform.links[0]?.url}
+                  key={system.id}
+                  href={system.links[0]?.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors py-1"
                 >
-                  <span>{platform.emoji}</span>
-                  <span>{platform.name}</span>
+                  <span>{system.emoji}</span>
+                  <span>{system.name}</span>
                 </a>
               ))}
             </div>
