@@ -18,10 +18,68 @@
 
 ---
 
+## � Live Links — Copy & Paste
+
+> Every live URL in the ecosystem. Click to visit, or copy the raw URL.
+
+### ⚡ Flagship Sites
+
+| System | URL |
+|--------|-----|
+| 🏛️ **FTH Trading Platform** | https://fth-os.netlify.app/ |
+| 🧬 **Genesis Protocol** | https://genesis.unykorn.org/ |
+| ☀️ **Helios Digital** | https://heliosdigital.xyz/ |
+| 🦄 **UNYKORN Sovereign Grid** | https://unykorn.org/ |
+| 🏰 **Imperia Platform** | https://imperia-platform.netlify.app/ |
+| 🏦 **OPTKAS** | https://optkas.org/ |
+| 📊 **GMIIE** | https://xxxiii-io.pages.dev/ |
+| 🏟️ **NIL33 Athlete Intelligence** | https://nil33.com/ |
+
+### 🌐 All Live URLs
+
+| System | URL |
+|--------|-----|
+| Y3K Markets | https://y3kmarkets.com/ |
+| XXXIII Capital Layer | https://xxxiii.io/library |
+| Doc Intelligence Engine | https://docs.unykorn.org/ |
+| Fitzherbert University | https://fthtrading.github.io/University/ |
+| FTH Commodity Platform | https://fthtrading.github.io/boutique/ |
+| Mens of God | https://mensofgod.com/ |
+| SUPER-S Infrastructure Guide | https://super-s.pages.dev/ |
+| DR Infrastructure Convergence | https://dr.optkas.org/ |
+| RAMMADDIPATI Protocol | https://ram.unykorn.org/ |
+| x402 Protocol | https://x402.unykorn.org/ |
+| AurumGram (AURG) | https://gold.unykorn.org/ |
+| Vaughan Capital Advisory | https://mensofgod.com/ |
+| UNY Token | https://avax.unykorn.org/ |
+| NEED AI | https://needai.y3kmarkets.com/ |
+| Drunks App | https://drunks.app/ |
+| X407 | https://fthtrading.github.io/X407/ |
+
+### 🖥️ This Portfolio
+
+| Page | URL |
+|------|-----|
+| Home | https://portfolio.unykorn.org/ |
+| Atlas (all 58 systems) | https://portfolio.unykorn.org/systems/ |
+| Control Plane | https://portfolio.unykorn.org/control/ |
+| Blog | https://portfolio.unykorn.org/blog/ |
+| Services | https://portfolio.unykorn.org/services/ |
+| Press | https://portfolio.unykorn.org/press/ |
+
+### 📂 GitHub Repos
+
+| Repo | URL |
+|------|-----|
+| This repo | https://github.com/FTHTrading/kevan-burns-empire- |
+
+---
+
 ## 📑 Table of Contents
 
 | Section | Description |
 |---------|-------------|
+| [🔗 Live Links](#-live-links--copy--paste) | Every live URL — copy & paste ready |
 | [🏗️ Architecture](#-architecture) | Stack, build pipeline, and project structure |
 | [🗂️ System Registry](#-system-registry--58-systems) | Complete catalog of all 58 systems |
 | [🏢 Brands](#-brands--10) | The 10 operating brands |
@@ -148,56 +206,58 @@ kevan-burns-empire/
 
 ### 🔴 Flagships
 
-| System | Brand | Category | Status | Live URL |
-|--------|-------|----------|--------|----------|
-| 🏛️ **FTH Trading Platform** | FTH Trading | Capital Infrastructure | 🟢 Live | [fth-os.netlify.app](https://fth-os.netlify.app/) |
-| 🧬 **Genesis Protocol** | Genesis | Experimental / Research | 🟢 Live | [genesis.unykorn.org](https://genesis.unykorn.org/) |
-| ☀️ **Helios Digital** | Helios | Tokenization / RWA | 🟢 Live | [heliosdigital.xyz](https://heliosdigital.xyz/) |
-| 🦄 **UNYKORN Sovereign Grid** | UnyKorn | Protocol / Service Mesh | 🟢 Live | [unykorn.org](https://unykorn.org/) |
-| 🏰 **Imperia Platform** | Imperia | Internal Operations | 🟢 Live | [imperia-platform.netlify.app](https://imperia-platform.netlify.app/) |
-| 🏦 **OPTKAS** | FTH Trading | Capital Infrastructure | 🟢 Live | [optkas.org](https://optkas.org/) |
-| 📊 **GMIIE** | XXXIII | Market Intelligence | 🟢 Live | [xxxiii-io.pages.dev](https://xxxiii-io.pages.dev/) |
-| 🏟️ **NIL33 Athlete Intelligence** | NIL33 | Sports / NIL / Athlete | 🟢 Live | [nil33.com](https://nil33.com/) |
+| # | System | Brand | Category | Status | Live URL |
+|---|--------|-------|----------|--------|----------|
+| 1 | 🏛️ **FTH Trading Platform** | FTH Trading | Capital Infrastructure | 🟢 Live | https://fth-os.netlify.app/ |
+| 2 | 🧬 **Genesis Protocol** | Genesis | Experimental / Research | 🟢 Live | https://genesis.unykorn.org/ |
+| 3 | ☀️ **Helios Digital** | Helios | Tokenization / RWA | 🟢 Live | https://heliosdigital.xyz/ |
+| 4 | 🦄 **UNYKORN Sovereign Grid** | UnyKorn | Protocol / Service Mesh | 🟢 Live | https://unykorn.org/ |
+| 5 | 🏰 **Imperia Platform** | Imperia | Internal Operations | 🟢 Live | https://imperia-platform.netlify.app/ |
+| 6 | 🏦 **OPTKAS** | FTH Trading | Capital Infrastructure | 🟢 Live | https://optkas.org/ |
+| 7 | 📊 **GMIIE** | XXXIII | Market Intelligence | 🟢 Live | https://xxxiii-io.pages.dev/ |
+| 8 | 🏟️ **NIL33 Athlete Intelligence** | NIL33 | Sports / NIL / Athlete | 🟢 Live | https://nil33.com/ |
 
 ### 🟢 Live Systems
 
-| System | Brand | Category | Live URL |
-|--------|-------|----------|----------|
-| Y3K Markets | Y3K Markets | AI / Supervisory Intelligence | [y3kmarkets.com](https://y3kmarkets.com/) |
-| XXXIII Capital Layer | XXXIII | Capital Infrastructure | [xxxiii.io/library](https://xxxiii.io/library) |
-| KAIROS | KAIROS | AI / Supervisory Intelligence | — |
-| DICS Compliance Intelligence | FTH Trading | Compliance / Identity / Governance | — |
-| Doc Intelligence Engine | KAIROS | AI / Supervisory Intelligence | [docs.unykorn.org](https://docs.unykorn.org/) |
-| DonkAI | UnyKorn | AI / Supervisory Intelligence | — |
-| Policy Integrity Engine | FTH Trading | Compliance / Identity / Governance | — |
-| Anchor Broadcast Network | FTH Trading | Cross-Chain / Settlement | — |
-| L1 Protocol Layer | FTH Trading | Protocol / Service Mesh | — |
-| Sovereign Service Mesh | FTH Trading | Protocol / Service Mesh | — |
-| Sovereign Vault | FTH Trading | Protocol / Service Mesh | — |
-| Fitzherbert University | FTH Trading | Education / Media / Community | [fthtrading.github.io/University](https://fthtrading.github.io/University/) |
-| FTH Commodity Platform | FTH Trading | Capital Infrastructure | [fthtrading.github.io/boutique](https://fthtrading.github.io/boutique/) |
-| Mens of God | Burns Independent | Education / Media / Community | [mensofgod.com](https://mensofgod.com/) |
-| LPS-1 Publishing Protocol | XXXIII | Publishing / IP | — |
-| The 2,500 Donkeys | XXXIII | Publishing / IP | — |
-| SUPER-S Infrastructure Guide | FTH Trading | Experimental / Research | [super-s.pages.dev](https://super-s.pages.dev/) |
-| Asset Factory OS | FTH Trading | Tokenization / RWA | — |
-| Solana Token Launcher | FTH Trading | Tokenization / RWA | — |
-| DR Infrastructure Convergence | FTH Trading | Market Intelligence | [dr.optkas.org](https://dr.optkas.org/) |
-| RAMMADDIPATI Protocol | FTH Trading | Monetary Systems | [ram.unykorn.org](https://ram.unykorn.org/) |
-| UnyKorn 7777 | UnyKorn | Tokenization / RWA | — |
-| x402 Protocol | FTH Trading | Cross-Chain / Settlement | [x402.unykorn.org](https://x402.unykorn.org/) |
-| AurumGram (AURG) | Helios | Tokenization / RWA | [gold.unykorn.org](https://gold.unykorn.org/) |
-| Vaughan Capital Advisory | FTH Trading | Capital Infrastructure | [mensofgod.com](https://mensofgod.com/) |
-| UNY Token | UnyKorn | Monetary Systems | [avax.unykorn.org](https://avax.unykorn.org/) |
-| NEED AI | Y3K Markets | AI / Supervisory Intelligence | [needai.y3kmarkets.com](https://needai.y3kmarkets.com/) |
+| # | System | Brand | Category | Live URL |
+|---|--------|-------|----------|----------|
+| 9 | Y3K Markets | Y3K Markets | AI / Supervisory Intelligence | https://y3kmarkets.com/ |
+| 10 | XXXIII Capital Layer | XXXIII | Capital Infrastructure | https://xxxiii.io/library |
+| 11 | KAIROS | KAIROS | AI / Supervisory Intelligence | — |
+| 12 | DICS Compliance Intelligence | FTH Trading | Compliance / Identity / Governance | — |
+| 13 | Doc Intelligence Engine | KAIROS | AI / Supervisory Intelligence | https://docs.unykorn.org/ |
+| 14 | DonkAI | UnyKorn | AI / Supervisory Intelligence | — |
+| 15 | Policy Integrity Engine | FTH Trading | Compliance / Identity / Governance | — |
+| 16 | Anchor Broadcast Network | FTH Trading | Cross-Chain / Settlement | — |
+| 17 | L1 Protocol Layer | FTH Trading | Protocol / Service Mesh | — |
+| 18 | Sovereign Service Mesh | FTH Trading | Protocol / Service Mesh | — |
+| 19 | Sovereign Vault | FTH Trading | Protocol / Service Mesh | — |
+| 20 | Fitzherbert University | FTH Trading | Education / Media / Community | https://fthtrading.github.io/University/ |
+| 21 | FTH Commodity Platform | FTH Trading | Capital Infrastructure | https://fthtrading.github.io/boutique/ |
+| 22 | Mens of God | Burns Independent | Education / Media / Community | https://mensofgod.com/ |
+| 23 | LPS-1 Publishing Protocol | XXXIII | Publishing / IP | — |
+| 24 | The 2,500 Donkeys | XXXIII | Publishing / IP | — |
+| 25 | SUPER-S Infrastructure Guide | FTH Trading | Experimental / Research | https://super-s.pages.dev/ |
+| 26 | Asset Factory OS | FTH Trading | Tokenization / RWA | — |
+| 27 | Solana Token Launcher | FTH Trading | Tokenization / RWA | — |
+| 28 | DR Infrastructure Convergence | FTH Trading | Market Intelligence | https://dr.optkas.org/ |
+| 29 | RAMMADDIPATI Protocol | FTH Trading | Monetary Systems | https://ram.unykorn.org/ |
+| 30 | UnyKorn 7777 | UnyKorn | Tokenization / RWA | — |
+| 31 | x402 Protocol | FTH Trading | Cross-Chain / Settlement | https://x402.unykorn.org/ |
+| 32 | AurumGram (AURG) | Helios | Tokenization / RWA | https://gold.unykorn.org/ |
+| 33 | Vaughan Capital Advisory | FTH Trading | Capital Infrastructure | https://mensofgod.com/ |
+| 34 | UNY Token | UnyKorn | Monetary Systems | https://avax.unykorn.org/ |
+| 35 | NEED AI | Y3K Markets | AI / Supervisory Intelligence | https://needai.y3kmarkets.com/ |
+| 36 | Drunks App | Burns Independent | Education / Media / Community | https://drunks.app/ |
+| 37 | X407 | FTH Trading | AI / Supervisory Intelligence | https://fthtrading.github.io/X407/ |
 
 ### 🟡 In Development
 
-| System | Brand | Category | Maturity |
-|--------|-------|----------|----------|
-| USDF Monetary Stack | FTH Trading | Monetary Systems | Testnet |
-| NIL33 Infrastructure | NIL33 | Compliance / Identity / Governance | Audit Mode |
-| VS Identity OS | FTH Trading | Compliance / Identity / Governance | Prototype |
+| # | System | Brand | Category | Maturity |
+|---|--------|-------|----------|----------|
+| 38 | USDF Monetary Stack | FTH Trading | Monetary Systems | Testnet |
+| 39 | NIL33 Infrastructure | NIL33 | Compliance / Identity / Governance | Audit Mode |
+| 40 | VS Identity OS | FTH Trading | Compliance / Identity / Governance | Prototype |
 | NIL Transparency Network | NIL33 | Compliance / Identity / Governance | Prototype |
 | Football Intelligence | NIL33 | Sports / NIL / Athlete | Prototype |
 | SunFarm Energy Layer | Helios | Energy / Sustainability | Testnet |
