@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 const navItems = [
   { label: 'Atlas', href: '/systems' },
+  { label: 'Control', href: '/control' },
   { label: 'Systems', href: '#platforms' },
   { label: 'Capabilities', href: '#capabilities' },
   { label: 'Services', href: '/services' },

@@ -9,6 +9,8 @@ import type {
   Brand,
   MaturityLevel,
   EcosystemMetrics,
+  StrategicPriority,
+  DependencyEdge,
 } from '@/types/system';
 import { MATURITY_ORDER } from '@/types/system';
 
@@ -174,4 +176,127 @@ export function getActiveBrands(systems: System[]): Brand[] {
 /** Unique maturity levels present in the given systems array. */
 export function getActiveMaturities(systems: System[]): MaturityLevel[] {
   return Array.from(new Set(systems.map((s) => s.maturity)));
+}
+
+// ── Control Plane Utilities ──────────────────────────────────────────────────
+
+export type ControlStatus = 'operational' | 'degraded' | 'offline' | 'development';
+
+export interface ControlSystemView {
+  system: System;
+  status: ControlStatus;
+  isLive: boolean;
+  hasLiveUrl: boolean;
+  hasRepo: boolean;
+  dependencyCount: number;
+  dependentCount: number;
+  revenueReady: boolean;
+  investorFacing: boolean;
+}
+
+/** Derive control status from maturity level */
+export function deriveControlStatus(system: System): ControlStatus {
+  const liveLevels: MaturityLevel[] = ['live', 'production'];
+  if (liveLevels.includes(system.maturity)) return 'operational';
+  if (['pilot', 'testnet', 'audit-mode'].includes(system.maturity)) return 'degraded';
+  if (system.maturity === 'archived') return 'offline';
+  return 'development';
+}
+
+/** Build the control view for a system */
+export function buildControlView(system: System, allSystems: System[]): ControlSystemView {
+  const dependentCount = allSystems.filter(
+    (s) => s.dependencies?.some((d) => d.systemId === system.id) ?? false,
+  ).length;
+
+  const revenueReady =
+    system.maturity === 'live' || system.maturity === 'production'
+      ? !!(system.business?.revenueRole || system.monetizationTags?.length)
+      : false;
+
+  const investorFacing =
+    system.strategicPriority === 'flagship' || system.strategicPriority === 'strategic';
+
+  return {
+    system,
+    status: deriveControlStatus(system),
+    isLive: ['live', 'production'].includes(system.maturity),
+    hasLiveUrl: !!system.liveUrl,
+    hasRepo: !!(system.repoUrls?.length),
+    dependencyCount: system.dependencies?.length ?? 0,
+    dependentCount,
+    revenueReady,
+    investorFacing,
+  };
+}
+
+/** Build all control views */
+export function buildControlViews(systems: System[]): ControlSystemView[] {
+  return systems.map((s) => buildControlView(s, systems));
+}
+
+/** Count systems by strategic priority */
+export function countByPriority(systems: System[]): Record<StrategicPriority, number> {
+  const counts: Record<StrategicPriority, number> = {
+    flagship: 0,
+    strategic: 0,
+    supporting: 0,
+    experimental: 0,
+    legacy: 0,
+  };
+  for (const s of systems) {
+    counts[s.strategicPriority] = (counts[s.strategicPriority] ?? 0) + 1;
+  }
+  return counts;
+}
+
+/** Build all dependency edges across the ecosystem */
+export interface DependencyGraphEdge {
+  sourceId: string;
+  targetId: string;
+  relationship: DependencyEdge['relationship'];
+  description?: string;
+}
+
+export function buildDependencyGraph(systems: System[]): DependencyGraphEdge[] {
+  const edges: DependencyGraphEdge[] = [];
+  for (const s of systems) {
+    for (const dep of s.dependencies ?? []) {
+      edges.push({
+        sourceId: s.id,
+        targetId: dep.systemId,
+        relationship: dep.relationship,
+        description: dep.description,
+      });
+    }
+  }
+  return edges;
+}
+
+/** Get systems that have no dependents (leaf nodes) */
+export function getLeafSystems(systems: System[]): System[] {
+  const depTargets = new Set<string>();
+  for (const s of systems) {
+    for (const dep of s.dependencies ?? []) {
+      depTargets.add(dep.systemId);
+    }
+  }
+  return systems.filter((s) => !depTargets.has(s.id));
+}
+
+/** Get systems that are depended on the most (foundation nodes) */
+export function getFoundationSystems(systems: System[]): { system: System; dependentCount: number }[] {
+  const countMap = new Map<string, number>();
+  for (const s of systems) {
+    for (const dep of s.dependencies ?? []) {
+      countMap.set(dep.systemId, (countMap.get(dep.systemId) ?? 0) + 1);
+    }
+  }
+  return Array.from(countMap.entries())
+    .map(([id, count]) => ({
+      system: systems.find((s) => s.id === id)!,
+      dependentCount: count,
+    }))
+    .filter((e) => e.system)
+    .sort((a, b) => b.dependentCount - a.dependentCount);
 }
