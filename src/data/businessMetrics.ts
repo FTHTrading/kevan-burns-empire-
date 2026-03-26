@@ -6,23 +6,24 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
- * Static business metrics, last verified 2026-03-18.
+ * Static business metrics, last verified 2026-03-21.
  *
- * chainsIntegrated — number of blockchain networks the stack operates on.
- *   Source: FTH OS (13 chains), USDF/Anchor (XRPL, Stellar, Polygon), etc.
+ * chainsIntegrated — XRPL, TRON, Avalanche, Polygon, Stellar + 10 additional.
+ *   Source: SUPER-S atlas (13 blockchains documented), +TRON +Avalanche confirmed live.
  *
  * worldsSimulated — Genesis Protocol DOI publication (Zenodo 18729652).
- *   5,680 simulated worlds, zero collapse observed.
+ *   6,820 simulated worlds, 3.41M computed epochs.
  *
- * yearsTrading — FTH Trading founding context (est. 1976 → 50+ years).
+ * yearsTrading — FTH Trading founding context (est. 1976).
  *
- * undefinedFailures — verified zero undefined failure states across the stack.
+ * passingAssertions — FTH Capital OS: 165 assertions + FTH Capital Rails: 307 tests.
+ *   Three independent security audits, Security Level A.
  */
 export const businessMetrics = {
-  chainsIntegrated: 13,
-  worldsSimulated: 5680,
+  chainsIntegrated: 15,
+  worldsSimulated: 6820,
   yearsTrading: 50,
-  undefinedFailures: 0,
+  passingAssertions: 472,
 } as const;
 
 export type BusinessMetrics = typeof businessMetrics;

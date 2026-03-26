@@ -47,7 +47,7 @@ export const heroMetrics: HeroMetric[] = [
   { label: 'Production',        value: maturityCount('live') + maturityCount('production'), suffix: ''  },
   { label: 'Chains Integrated', value: businessMetrics.chainsIntegrated,        suffix: '+' },
   { label: 'Worlds Simulated',  value: businessMetrics.worldsSimulated,         suffix: ''  },
-  { label: 'Undefined Failures',value: businessMetrics.undefinedFailures,       suffix: ''  },
+  { label: 'Passing Assertions',value: businessMetrics.passingAssertions,       suffix: '+' },
 ];
 
 // ── Full metrics object (imported by PlatformsGrid, other consumers) ─────────

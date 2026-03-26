@@ -5,13 +5,12 @@ import { ArrowRight } from 'lucide-react';
 
 const navItems = [
   { label: 'Atlas', href: '/systems' },
-  { label: 'Control', href: '/control' },
-  { label: 'Systems', href: '#platforms' },
-  { label: 'Capabilities', href: '#capabilities' },
+  { label: 'Capital', href: '#capital-stack' },
+  { label: 'Diligence', href: '/diligence' },
+  { label: 'Fund', href: '/funding' },
   { label: 'Services', href: '/services' },
+  { label: 'Live', href: '/proof' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Research', href: '#research' },
-  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
@@ -37,21 +36,43 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-[#8888a0] hover:text-white transition-colors"
+              className={`text-sm transition-colors flex items-center gap-1.5 ${
+                item.label === 'Live'
+                  ? 'text-green-400 hover:text-green-300 font-semibold'
+                  : item.label === 'Fund'
+                  ? 'text-emerald-400 hover:text-emerald-300 font-semibold'                  : item.label === 'Diligence'
+                  ? 'text-amber-400 hover:text-amber-300 font-semibold'
+                  : item.label === 'Capital'
+                  ? 'text-purple-400 hover:text-purple-300 font-semibold'                  : 'text-[#8888a0] hover:text-white'
+              }`}
             >
+              {item.label === 'Live' && (
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+              )}
+              {item.label === 'Fund' && (
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              )}
               {item.label}
             </a>
           ))}
         </div>
 
         {/* CTA */}
-        <a
-          href="#contact"
-          className="flex items-center gap-2 px-4 py-2 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 rounded-lg text-sm font-medium transition-all border border-blue-600/20"
-        >
-          Launch With Me
-          <ArrowRight className="w-3.5 h-3.5" />
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="/funding"
+            className="hidden sm:flex items-center gap-2 px-4 py-2 bg-emerald-600/10 hover:bg-emerald-600/20 text-emerald-400 rounded-lg text-sm font-medium transition-all border border-emerald-600/20"
+          >
+            Invest
+          </a>
+          <a
+            href="#contact"
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 rounded-lg text-sm font-medium transition-all border border-blue-600/20"
+          >
+            Launch With Me
+            <ArrowRight className="w-3.5 h-3.5" />
+          </a>
+        </div>
       </div>
     </motion.nav>
   );

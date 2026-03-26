@@ -13,6 +13,11 @@ import LeadCapture from '@/components/LeadCapture';
 import RevenueEnterprise from '@/components/RevenueEnterprise';
 import ContactCTA from '@/components/ContactCTA';
 import Footer from '@/components/Footer';
+import DocumentedCapitalStack from '@/components/DocumentedCapitalStack';
+import OPTKASReconciliation from '@/components/OPTKASReconciliation';
+import FinanceabilityPanel from '@/components/FinanceabilityPanel';
+import PortfolioInterpretation from '@/components/PortfolioInterpretation';
+import DiligenceNotes from '@/components/DiligenceNotes';
 
 export default function Home() {
   return (
@@ -35,6 +40,16 @@ export default function Home() {
         <LeadCapture />
         <div className="section-divider" />
         <RevenueEnterprise />
+        <div className="section-divider" />
+        <DocumentedCapitalStack />
+        <div className="section-divider" />
+        <OPTKASReconciliation />
+        <div className="section-divider" />
+        <FinanceabilityPanel />
+        <div className="section-divider" />
+        <PortfolioInterpretation />
+        <div className="section-divider" />
+        <DiligenceNotes />
         <div className="section-divider" />
         <ContactCTA />
       </main>
