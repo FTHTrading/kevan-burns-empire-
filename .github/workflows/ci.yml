@@ -1,0 +1,105 @@
+name: CI / Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ── Quality Gates ──────────────────────────────────────────────────────────
+  quality:
+    name: TypeScript · Lint · Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: TypeScript
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Tests
+        run: npm run test:ci
+
+  # ── Build ──────────────────────────────────────────────────────────────────
+  build:
+    name: Build (Next.js static export)
+    runs-on: ubuntu-latest
+    needs: quality
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify page count
+        run: |
+          COUNT=$(find out -name "index.html" | wc -l)
+          echo "Static pages built: $COUNT"
+          if [ "$COUNT" -lt 70 ]; then
+            echo "ERROR: Expected at least 70 pages, got $COUNT"
+            exit 1
+          fi
+
+      - name: Verify key routes exist
+        run: |
+          for route in out/index.html out/diligence/index.html out/funding/index.html out/systems/index.html out/proof/index.html out/404.html; do
+            if [ ! -f "$route" ]; then
+              echo "ERROR: Missing expected output: $route"
+              exit 1
+            fi
+          done
+          echo "All key routes verified."
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-export
+          path: out/
+          retention-days: 1
+
+  # ── Deploy (main branch only) ───────────────────────────────────────────────
+  deploy:
+    name: Deploy → Cloudflare Pages
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: static-export
+          path: out/
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages deploy out --project-name=portfolio-unykorn --branch=production --commit-dirty=true
