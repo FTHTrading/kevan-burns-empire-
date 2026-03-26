@@ -21,7 +21,7 @@ const leadMagnets = [
   {
     icon: <Zap className="w-5 h-5" />,
     title: 'Genesis Protocol Research Summary',
-    description: 'Key findings from 5,680 simulated economic worlds — zero collapse. Summary of the computational macroeconomics research.',
+    description: 'Key findings from 6,820 simulated worlds, 3.41M computed epochs — zero collapse. Summary of the Genesis Protocol computational macroeconomics research (DOI: 10.5281/zenodo.18729652).',
     type: 'Research Brief',
     color: '#10b981',
   },

@@ -94,7 +94,7 @@ export default function SystemCard({ system, index = 0 }: Props) {
         )}
 
         {/* Live indicator */}
-        {s.liveUrl && (
+        {s.maturity === 'live' && (
           <div className="flex items-center gap-1.5 mt-3 pt-3 border-t border-[#1e1e2e]">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
             <span className="text-[10px] text-green-500/80 font-medium">LIVE</span>

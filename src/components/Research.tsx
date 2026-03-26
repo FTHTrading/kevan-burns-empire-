@@ -22,7 +22,7 @@ export default function Research() {
             Research & Publications
           </h2>
           <p className="text-[#8888a0] text-lg max-w-2xl mx-auto">
-            Peer-reviewed research and open publications in deterministic systems and computational economics.
+            Published research and open preprints in deterministic systems and computational economics.
           </p>
         </motion.div>
 
@@ -77,13 +77,13 @@ export default function Research() {
             Zenodo Profile
           </a>
           <a
-            href={social.orcid}
+            href="https://zenodo.org/records/18729652"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#1e1e2e] bg-[#12121a] text-[#c0c0d0] hover:text-white hover:border-green-500/30 transition-all"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#1e1e2e] bg-[#12121a] text-[#c0c0d0] hover:text-white hover:border-amber-500/30 transition-all"
           >
             <Award className="w-4 h-4" />
-            ORCID Profile
+            DOI 10.5281/zenodo.18729652
           </a>
           <a
             href={social.github}

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Rocket, ArrowRight, Mail, Phone } from 'lucide-react';
+import { Rocket, ArrowRight, Mail, Phone, DollarSign } from 'lucide-react';
 
 export default function ContactCTA() {
   return (
@@ -23,13 +23,24 @@ export default function ContactCTA() {
           </h2>
 
           <p className="text-[#8888a0] text-lg max-w-2xl mx-auto mb-4">
-            Whether you&apos;re an institution seeking sovereign capital architecture, a fund manager tokenizing real-world assets, 
+            Whether you&apos;re an institution seeking sovereign capital architecture, a fund manager tokenizing real-world assets,
             or a protocol team that needs deterministic execution — let&apos;s architect it.
           </p>
 
-          <p className="text-[#8888a0] text-base max-w-xl mx-auto mb-6">
+          <p className="text-[#8888a0] text-base max-w-xl mx-auto mb-8">
             Accepting select consulting engagements, institutional partnerships, and infrastructure build contracts.
           </p>
+
+          {/* Investor track */}
+          <div className="inline-flex flex-col sm:flex-row items-center gap-3 px-5 py-3 rounded-xl border border-emerald-500/20 bg-emerald-500/5 mb-8">
+            <DollarSign className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+            <p className="text-sm text-emerald-300">
+              Looking to invest? Two active raises: <strong>Atlanta Cricket RWA ($35M Reg D)</strong> and <strong>Genesis Sentience Protocol (SAFE $1M–$3M)</strong>.
+            </p>
+            <a href="/funding" className="text-xs font-semibold text-emerald-400 hover:text-emerald-300 whitespace-nowrap underline underline-offset-2 transition-colors">
+              View Funding →
+            </a>
+          </div>
 
           <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm text-[#8888a0]">
             <a href="mailto:kevan.burns@fthtrading.com" className="flex items-center gap-2 hover:text-white transition-colors">

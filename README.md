@@ -1,9 +1,9 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/Systems-58-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Live-35+-22c55e?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Chains-15-a855f7?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Brands-10-ec4899?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Categories-14-0ea5e9?style=for-the-badge" />
+﻿<p align="center">
+  <img src="https://img.shields.io/badge/Systems-57-blue?style=for-the-badge" alt="Systems: 57" />
+  <img src="https://img.shields.io/badge/Live-35+-22c55e?style=for-the-badge" alt="Live: 35+" />
+  <img src="https://img.shields.io/badge/Chains-15-a855f7?style=for-the-badge" alt="Chains: 15" />
+  <img src="https://img.shields.io/badge/Brands-10-ec4899?style=for-the-badge" alt="Brands: 10" />
+  <img src="https://img.shields.io/badge/Categories-14-0ea5e9?style=for-the-badge" alt="Categories: 14" />
 </p>
 
 <h1 align="center">🦄 KEVAN BURNS EMPIRE</h1>
@@ -11,8 +11,8 @@
 <p align="center"><em>The single source of truth for every system, protocol, and platform across the UnyKorn / FTH Trading / Burns ecosystem.</em></p>
 
 <p align="center">
-  <a href="https://portfolio.unykorn.org/systems/">🔭 Atlas</a> · 
-  <a href="https://portfolio.unykorn.org/control/">⚡ Control Plane</a> · 
+  <a href="https://portfolio.unykorn.org/systems/">🔭 Atlas</a> ·
+  <a href="https://portfolio.unykorn.org/control/">⚡ Control Plane</a> ·
   <a href="https://portfolio.unykorn.org/">🏠 Home</a>
 </p>
 
@@ -22,7 +22,7 @@
 
 > Every live URL in the ecosystem. Copy any line directly.
 
-```
+```text
 ── PORTFOLIO ──────────────────────────────────────────────────
 https://portfolio.unykorn.org/
 https://portfolio.unykorn.org/systems/
@@ -47,7 +47,7 @@ https://xxxiii.io/library                    XXXIII Capital Layer
 https://docs.unykorn.org/                    Doc Intelligence Engine
 https://fthtrading.github.io/University/     Fitzherbert University
 https://fthtrading.github.io/boutique/       FTH Commodity Platform
-https://mensofgod.com/                       Mens of God
+https://mensofgod.com/                       Vaughan Capital Advisory
 https://super-s.pages.dev/                   SUPER-S Infrastructure Guide
 https://dr.optkas.org/                       DR Infrastructure Convergence
 https://ram.unykorn.org/                     RAMMADDIPATI Protocol
@@ -67,28 +67,28 @@ https://github.com/FTHTrading/kevan-burns-empire-
 ## 📑 Table of Contents
 
 | Section | Description |
-|---------|-------------|
+| --------- | ------------- |
 | [🔗 Live Links](#-live-links--copy--paste) | Every live URL — copy & paste ready |
-| [🏗️ Architecture](#-architecture) | Stack, build pipeline, and project structure |
-| [🗂️ System Registry](#-system-registry--58-systems) | Complete catalog of all 58 systems |
+| [🏗 Architecture](#-architecture) | Stack, build pipeline, and project structure |
+| [🗂 System Registry](#-system-registry--57-systems) | Complete catalog of all 57 systems |
 | [🏢 Brands](#-brands--10) | The 10 operating brands |
 | [📊 Categories](#-categories--14) | 14 system categories with color codes |
-| [⛓️ Chains](#-chains--15) | 15 blockchain targets |
+| [⛓ Chains](#-chains--15) | 15 blockchain targets |
 | [🔬 Maturity Model](#-maturity-model--10-levels) | 10-level maturity classification |
 | [🌐 Infrastructure Layers](#-infrastructure-layers) | 10-layer stack architecture |
-| [🗺️ Dependency Graph](#-dependency-graph) | System-to-system relationships |
+| [🗺 Dependency Graph](#-dependency-graph) | System-to-system relationships |
 | [💰 Capital Flow](#-capital-flow) | How capital moves through the ecosystem |
 | [🤖 AI Supervision Flow](#-ai-supervision-flow) | Intelligence propagation chain |
-| [🛡️ Compliance Flow](#-compliance--proof-flow) | Identity, compliance, and proof rail |
+| [🛡 Compliance Flow](#-compliance--proof-flow) | Identity, compliance, and proof rail |
 | [📐 Featured Collections](#-featured-collections) | Curated system groupings |
 | [🚀 Quick Start](#-quick-start) | Build and run locally |
 | [📦 Deployment](#-deployment) | Static export to IPFS / Vercel / Netlify |
 
 ---
 
-## 🏗️ Architecture
+## 🏗 Architecture
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────┐
 │                    KEVAN BURNS EMPIRE                         │
 │              Next.js 14 · React 18 · TypeScript 5            │
@@ -107,7 +107,7 @@ https://github.com/FTHTrading/kevan-burns-empire-
 │                           │                                   │
 │  ┌────────────────────────┴──────────────────────────────┐   │
 │  │              Canonical Data Layer                       │   │
-│  │  systems.ts (58) · categories.ts · chains.ts           │   │
+│  │  systems.ts (57) · categories.ts · chains.ts           │   │
 │  │  brands.ts · featured.ts · atlas.ts (utilities)        │   │
 │  └────────────────────────┬──────────────────────────────┘   │
 │                           │                                   │
@@ -121,7 +121,7 @@ https://github.com/FTHTrading/kevan-burns-empire-
 
 ### Project Structure
 
-```
+```text
 kevan-burns-empire/
 ├── src/
 │   ├── app/
@@ -130,7 +130,7 @@ kevan-burns-empire/
 │   │   ├── globals.css              # Global styles
 │   │   ├── systems/
 │   │   │   ├── page.tsx             # /systems — Atlas grid
-│   │   │   └── [slug]/page.tsx      # /systems/:slug — Detail pages (58)
+│   │   │   └── [slug]/page.tsx      # /systems/:slug — Detail pages (57)
 │   │   ├── control/
 │   │   │   └── page.tsx             # /control — Control Plane
 │   │   ├── blog/
@@ -160,7 +160,7 @@ kevan-burns-empire/
 │   │   ├── Footer.tsx               # Footer
 │   │   └── ...                      # Other homepage sections
 │   ├── content/
-│   │   ├── systems.ts               # 📦 THE REGISTRY — 58 systems
+│   │   ├── systems.ts               # 📦 THE REGISTRY — 57 systems
 │   │   ├── categories.ts            # 14 category definitions
 │   │   ├── chains.ts                # 15 chain definitions
 │   │   ├── brands.ts                # 10 brand definitions
@@ -178,7 +178,7 @@ kevan-burns-empire/
 ### Tech Stack
 
 | Layer | Technology | Purpose |
-|-------|-----------|---------|
+| ------- | ----------- | --------- |
 | **Framework** | Next.js 14.2 | Static site generation, App Router |
 | **Language** | TypeScript 5 | Full type safety across entire registry |
 | **UI** | React 18 | Component-based UI |
@@ -189,27 +189,27 @@ kevan-burns-empire/
 
 ---
 
-## 🗂️ System Registry — 58 Systems
+## 🗂 System Registry — 57 Systems
 
 > Every system is registered once in `src/content/systems.ts` and appears automatically across the Atlas, Control Plane, detail pages, dependency graph, and all filters.
 
 ### 🔴 Flagships
 
 | # | System | Brand | Category | Status | Live URL |
-|---|--------|-------|----------|--------|----------|
-| 1 | 🏛️ **FTH Trading Platform** | FTH Trading | Capital Infrastructure | 🟢 Live | https://fth-os.netlify.app/ |
+| --- | -------- | ------- | ---------- | -------- | ---------- |
+| 1 | 🏛 **FTH Trading Platform** | FTH Trading | Capital Infrastructure | 🟢 Live | https://fth-os.netlify.app/ |
 | 2 | 🧬 **Genesis Protocol** | Genesis | Experimental / Research | 🟢 Live | https://genesis.unykorn.org/ |
-| 3 | ☀️ **Helios Digital** | Helios | Tokenization / RWA | 🟢 Live | https://heliosdigital.xyz/ |
+| 3 | ☀ **Helios Digital** | Helios | Tokenization / RWA | 🟢 Live | https://heliosdigital.xyz/ |
 | 4 | 🦄 **UNYKORN Sovereign Grid** | UnyKorn | Protocol / Service Mesh | 🟢 Live | https://unykorn.org/ |
 | 5 | 🏰 **Imperia Platform** | Imperia | Internal Operations | 🟢 Live | https://imperia-platform.netlify.app/ |
 | 6 | 🏦 **OPTKAS** | FTH Trading | Capital Infrastructure | 🟢 Live | https://optkas.org/ |
 | 7 | 📊 **GMIIE** | XXXIII | Market Intelligence | 🟢 Live | https://xxxiii-io.pages.dev/ |
-| 8 | 🏟️ **NIL33 Athlete Intelligence** | NIL33 | Sports / NIL / Athlete | 🟢 Live | https://nil33.com/ |
+| 8 | 🏟 **NIL33 Athlete Intelligence** | NIL33 | Sports / NIL / Athlete | 🟢 Live | https://nil33.com/ |
 
 ### 🟢 Live Systems
 
 | # | System | Brand | Category | Live URL |
-|---|--------|-------|----------|----------|
+| --- | -------- | ------- | ---------- | ---------- |
 | 9 | Y3K Markets | Y3K Markets | AI / Supervisory Intelligence | https://y3kmarkets.com/ |
 | 10 | XXXIII Capital Layer | XXXIII | Capital Infrastructure | https://xxxiii.io/library |
 | 11 | KAIROS | KAIROS | AI / Supervisory Intelligence | — |
@@ -223,50 +223,49 @@ kevan-burns-empire/
 | 19 | Sovereign Vault | FTH Trading | Protocol / Service Mesh | — |
 | 20 | Fitzherbert University | FTH Trading | Education / Media / Community | https://fthtrading.github.io/University/ |
 | 21 | FTH Commodity Platform | FTH Trading | Capital Infrastructure | https://fthtrading.github.io/boutique/ |
-| 22 | Mens of God | Burns Independent | Education / Media / Community | https://mensofgod.com/ |
-| 23 | LPS-1 Publishing Protocol | XXXIII | Publishing / IP | — |
-| 24 | The 2,500 Donkeys | XXXIII | Publishing / IP | — |
-| 25 | SUPER-S Infrastructure Guide | FTH Trading | Experimental / Research | https://super-s.pages.dev/ |
-| 26 | Asset Factory OS | FTH Trading | Tokenization / RWA | — |
-| 27 | Solana Token Launcher | FTH Trading | Tokenization / RWA | — |
-| 28 | DR Infrastructure Convergence | FTH Trading | Market Intelligence | https://dr.optkas.org/ |
-| 29 | RAMMADDIPATI Protocol | FTH Trading | Monetary Systems | https://ram.unykorn.org/ |
-| 30 | UnyKorn 7777 | UnyKorn | Tokenization / RWA | — |
-| 31 | x402 Protocol | FTH Trading | Cross-Chain / Settlement | https://x402.unykorn.org/ |
-| 32 | AurumGram (AURG) | Helios | Tokenization / RWA | https://gold.unykorn.org/ |
-| 33 | Vaughan Capital Advisory | FTH Trading | Capital Infrastructure | https://mensofgod.com/ |
-| 34 | UNY Token | UnyKorn | Monetary Systems | https://avax.unykorn.org/ |
-| 35 | NEED AI | Y3K Markets | AI / Supervisory Intelligence | https://needai.y3kmarkets.com/ |
-| 36 | Drunks App | Burns Independent | Education / Media / Community | https://drunks.app/ |
-| 37 | X407 | FTH Trading | AI / Supervisory Intelligence | https://fthtrading.github.io/X407/ |
+| 22 | LPS-1 Publishing Protocol | XXXIII | Publishing / IP | — |
+| 23 | The 2,500 Donkeys | XXXIII | Publishing / IP | — |
+| 24 | SUPER-S Infrastructure Guide | FTH Trading | Experimental / Research | https://super-s.pages.dev/ |
+| 25 | Asset Factory OS | FTH Trading | Tokenization / RWA | — |
+| 26 | Solana Token Launcher | FTH Trading | Tokenization / RWA | — |
+| 27 | DR Infrastructure Convergence | FTH Trading | Market Intelligence | https://dr.optkas.org/ |
+| 28 | RAMMADDIPATI Protocol | FTH Trading | Monetary Systems | https://ram.unykorn.org/ |
+| 29 | UnyKorn 7777 | UnyKorn | Tokenization / RWA | — |
+| 30 | x402 Protocol | FTH Trading | Cross-Chain / Settlement | https://x402.unykorn.org/ |
+| 31 | AurumGram (AURG) | Helios | Tokenization / RWA | https://gold.unykorn.org/ |
+| 32 | Vaughan Capital Advisory | FTH Trading | Capital Infrastructure | https://mensofgod.com/ |
+| 33 | UNY Token | UnyKorn | Monetary Systems | https://avax.unykorn.org/ |
+| 34 | NEED AI | Y3K Markets | AI / Supervisory Intelligence | https://needai.y3kmarkets.com/ |
+| 35 | Drunks App | Burns Independent | Education / Media / Community | https://drunks.app/ |
+| 36 | X407 | FTH Trading | AI / Supervisory Intelligence | https://fthtrading.github.io/X407/ |
 
 ### 🟡 In Development
 
 | # | System | Brand | Category | Maturity |
-|---|--------|-------|----------|----------|
-| 38 | USDF Monetary Stack | FTH Trading | Monetary Systems | Testnet |
-| 39 | NIL33 Infrastructure | NIL33 | Compliance / Identity / Governance | Audit Mode |
-| 40 | VS Identity OS | FTH Trading | Compliance / Identity / Governance | Prototype |
-| NIL Transparency Network | NIL33 | Compliance / Identity / Governance | Prototype |
-| Football Intelligence | NIL33 | Sports / NIL / Athlete | Prototype |
-| SunFarm Energy Layer | Helios | Energy / Sustainability | Testnet |
-| Genesis Sentience Protocol | Genesis | AI / Supervisory Intelligence | Prototype |
-| Drone GNC Framework | FTH Trading | Experimental / Research | Prototype |
-| Spectral Ledger | FTH Trading | Experimental / Research | Prototype |
-| Gravity Engine | FTH Trading | Experimental / Research | Thesis |
-| Global Truth | FTH Trading | Compliance / Identity / Governance | Thesis |
-| X407 | FTH Trading | AI / Supervisory Intelligence | Designed |
-| SGE | UnyKorn | Compliance / Identity / Governance | Prototype |
-| SGE Alignment OS | UnyKorn | AI / Supervisory Intelligence | Prototype |
-| Cricket | FTH Trading | Protocol / Service Mesh | Prototype |
-| Freelance Command Center | FTH Trading | Internal Operations | Internal |
-| FTH Documentation Hub | FTH Trading | Internal Operations | Internal |
-| Drunks App | Burns Independent | Education / Media / Community | Pilot |
-| Helios Video Gen | Helios | Education / Media / Community | Prototype |
-| Popeye-Tars-Mars-Tev | UnyKorn | AI / Supervisory Intelligence | Prototype |
-| AIF — Autonomous Investment Fund | FTH Trading | Capital Infrastructure | Prototype |
-| OPTKAS Bank VI | FTH Trading | Market Intelligence | Prototype |
-| AxlUSD Structured Finance | Y3K Markets | Capital Infrastructure | Designed |
+| --- | -------- | ------- | ---------- | ---------- |
+| 37 | USDF Monetary Stack | FTH Trading | Monetary Systems | Testnet |
+| 38 | NIL33 Infrastructure | NIL33 | Compliance / Identity / Governance | Audit Mode |
+| 39 | VS Identity OS | FTH Trading | Compliance / Identity / Governance | Prototype |
+| 40 | NIL Transparency Network | NIL33 | Compliance / Identity / Governance | Prototype |
+| 41 | Football Intelligence | NIL33 | Sports / NIL / Athlete | Prototype |
+| 42 | SunFarm Energy Layer | Helios | Energy / Sustainability | Testnet |
+| 43 | Genesis Sentience Protocol | Genesis | AI / Supervisory Intelligence | Prototype |
+| 44 | Drone GNC Framework | FTH Trading | Experimental / Research | Prototype |
+| 45 | Spectral Ledger | FTH Trading | Experimental / Research | Prototype |
+| 46 | Gravity Engine | FTH Trading | Experimental / Research | Thesis |
+| 47 | Global Truth | FTH Trading | Compliance / Identity / Governance | Thesis |
+| 48 | X407 | FTH Trading | AI / Supervisory Intelligence | Designed |
+| 49 | SGE | UnyKorn | Compliance / Identity / Governance | Prototype |
+| 50 | SGE Alignment OS | UnyKorn | AI / Supervisory Intelligence | Prototype |
+| 51 | Cricket | FTH Trading | Protocol / Service Mesh | Prototype |
+| 52 | Freelance Command Center | FTH Trading | Internal Operations | Internal |
+| 53 | FTH Documentation Hub | FTH Trading | Internal Operations | Internal |
+| 54 | Drunks App | Burns Independent | Education / Media / Community | Pilot |
+| 55 | Helios Video Gen | Helios | Education / Media / Community | Prototype |
+| 56 | Popeye-Tars-Mars-Tev | UnyKorn | AI / Supervisory Intelligence | Prototype |
+| 57 | AIF — Autonomous Investment Fund | FTH Trading | Capital Infrastructure | Prototype |
+| 58 | OPTKAS Bank VI | FTH Trading | Market Intelligence | Prototype |
+| 59 | AxlUSD Structured Finance | Y3K Markets | Capital Infrastructure | Designed |
 
 ---
 
@@ -274,10 +273,10 @@ kevan-burns-empire/
 
 ```mermaid
 graph LR
-    FTH[🏛️ FTH Trading] --> UNY[🦄 UnyKorn]
+    FTH[🏛 FTH Trading] --> UNY[🦄 UnyKorn]
     FTH --> Y3K[📈 Y3K Markets]
-    FTH --> NIL[🏟️ NIL33]
-    FTH --> HEL[☀️ Helios]
+    FTH --> NIL[🏟 NIL33]
+    FTH --> HEL[☀ Helios]
     FTH --> XXX[💎 XXXIII]
     FTH --> GEN[🧬 Genesis]
     FTH --> KAI[🤖 KAIROS]
@@ -297,17 +296,17 @@ graph LR
 ```
 
 | Brand | Systems | Focus Area |
-|-------|---------|------------|
-| 🏛️ **FTH Trading** | 26 | Capital infrastructure, protocol mesh, compliance |
+| ------- | --------- | ------------ |
+| 🏛 **FTH Trading** | 26 | Capital infrastructure, protocol mesh, compliance |
 | 🦄 **UnyKorn** | 7 | Sovereign grid, governance, tokenization |
 | 📈 **Y3K Markets** | 3 | Career OS, AI phone infrastructure, structured finance |
-| 🏟️ **NIL33** | 4 | Sports analytics, athlete intelligence, NIL compliance |
-| ☀️ **Helios** | 3 | Tokenization, energy, video generation |
+| 🏟 **NIL33** | 4 | Sports analytics, athlete intelligence, NIL compliance |
+| ☀ **Helios** | 3 | Tokenization, energy, video generation |
 | 💎 **XXXIII** | 4 | Capital layer, market intelligence, publishing |
 | 🧬 **Genesis** | 2 | Protocol research, sentience simulation |
 | 🤖 **KAIROS** | 2 | AI supervisory runtime, document intelligence |
 | 🏰 **Imperia** | 1 | Operational command platform |
-| 🔥 **Burns Independent** | 3 | Media, community, faith-based |
+| 🔥 **Burns Independent** | 1 | Community, culture, experimental |
 
 ---
 
@@ -332,7 +331,7 @@ pie title Systems by Category
 ```
 
 | Color | Category | Systems | Description |
-|-------|----------|---------|-------------|
+| ------- | ---------- | --------- | ------------- |
 | 🔵 | Capital Infrastructure | 7 | Vaults, treasury, issuance rails, institutional capital flow |
 | 🟢 | Monetary Systems | 3 | Reserve-backed stablecoins, deterministic mint/burn |
 | 🟣 | Tokenization / RWA | 5 | Real-world asset tokenization, digital securities |
@@ -350,7 +349,7 @@ pie title Systems by Category
 
 ---
 
-## ⛓️ Chains — 15
+## ⛓ Chains — 15
 
 ```mermaid
 graph TD
@@ -385,7 +384,7 @@ graph TD
 
 ## 🔬 Maturity Model — 10 Levels
 
-```
+```text
  ┌─────────────────────────────────────────────────────────────────┐
  │                    MATURITY PROGRESSION                          │
  ├───────────┬──────────┬──────────┬──────────┬───────────┐        │
@@ -401,7 +400,7 @@ graph TD
 ```
 
 | Level | Color | Count | Description |
-|-------|-------|-------|-------------|
+| ------- | ------- | ------- | ------------- |
 | Thesis | `#64748b` | 2 | Concept documented, no code |
 | Designed | `#818cf8` | 2 | Architecture defined, pre-development |
 | Prototype | `#a78bfa` | 13 | Early code, not deployed |
@@ -419,11 +418,11 @@ graph TD
 
 The full ecosystem is organized into 10 infrastructure layers, from research at the bottom to media/brand at the top:
 
-```
+```text
  ┌─────────────────────────────────────────────────────────────────┐
  │                                                                  │
  │   10. Media / Education / Brand                                  │
- │       Fitzherbert University · Mens of God · Drunks App          │
+ │       Fitzherbert University · Drunks App                        │
  │                                                                  │
  │    9. Governance & Policy                                        │
  │       SGE · NIL Transparency · Global Truth                      │
@@ -457,13 +456,13 @@ The full ecosystem is organized into 10 infrastructure layers, from research at 
 
 ---
 
-## 🗺️ Dependency Graph
+## 🗺 Dependency Graph
 
 The core system-to-system dependency map. Arrows represent `depends-on`, `extends`, `integrates-with`, and `child-of` relationships.
 
 ```mermaid
 graph TB
-    subgraph CORE["🏛️ Core Infrastructure"]
+    subgraph CORE["🏛 Core Infrastructure"]
         FTH_OS["FTH OS<br/>Capital Infrastructure"]
         OPTKAS["OPTKAS<br/>Capital Infrastructure"]
         L1["L1 Protocol<br/>Protocol Layer"]
@@ -478,7 +477,7 @@ graph TB
         NEED_AI["NEED AI<br/>Phone AI"]
     end
 
-    subgraph COMPLIANCE["🛡️ Compliance"]
+    subgraph COMPLIANCE["🛡 Compliance"]
         NIL33["NIL33 Infra<br/>Compliance Gating"]
         DICS["DICS<br/>Compliance Intel"]
     end
@@ -501,7 +500,7 @@ graph TB
         GENESIS_WORLD["Genesis Sentience<br/>Protocol"]
     end
 
-    subgraph SPORTS["🏟️ Sports"]
+    subgraph SPORTS["🏟 Sports"]
         NIL33_ATH["NIL33 Athlete<br/>Intelligence"]
         FOOTBALL["Football<br/>Intelligence"]
     end
@@ -554,11 +553,11 @@ How capital moves through the ecosystem:
 
 ```mermaid
 flowchart LR
-    A["🏦 FTH OS<br/>Structuring"] --> B["🏛️ OPTKAS<br/>Facility Design"]
+    A["🏦 FTH OS<br/>Structuring"] --> B["🏛 OPTKAS<br/>Facility Design"]
     B --> C["📦 Asset Factory<br/>Tokenization"]
     C --> D["📈 Y3K Markets<br/>Distribution"]
     D --> E["💵 USDF<br/>Settlement"]
-    E --> F["☀️ Helios<br/>Activation"]
+    E --> F["☀ Helios<br/>Activation"]
     F --> G["📡 Anchor Broadcast<br/>Finality"]
     
     style A fill:#3b82f6,stroke:#1e40af,color:#fff
@@ -579,7 +578,7 @@ How intelligence propagates through the stack:
 ```mermaid
 flowchart LR
     A["📊 GMIIE<br/>Market Signals"] --> B["🤖 KAIROS<br/>AI Runtime"]
-    B --> C["🛡️ DICS<br/>Compliance Intel"]
+    B --> C["🛡 DICS<br/>Compliance Intel"]
     C --> D["🔐 NIL33 Infra<br/>Identity Gating"]
     D --> E["📋 FTH Boutique<br/>Analytics Surface"]
     
@@ -592,16 +591,16 @@ flowchart LR
 
 ---
 
-## 🛡️ Compliance & Proof Flow
+## 🛡 Compliance & Proof Flow
 
 How compliance assertions propagate:
 
 ```mermaid
 flowchart LR
-    A["🔐 NIL33 Infra<br/>Identity Verification"] --> B["🛡️ DICS<br/>Sanctions Screening"]
+    A["🔐 NIL33 Infra<br/>Identity Verification"] --> B["🛡 DICS<br/>Sanctions Screening"]
     B --> C["🔑 Sovereign Vault<br/>Key Signing"]
     C --> D["📡 Anchor Broadcast<br/>Merkle Anchoring"]
-    D --> E["⛓️ L1 Protocol<br/>Finality"]
+    D --> E["⛓ L1 Protocol<br/>Finality"]
     
     style A fill:#f97316,stroke:#c2410c,color:#fff
     style B fill:#ef4444,stroke:#b91c1c,color:#fff
@@ -664,9 +663,9 @@ npm run lint
 ### Key Pages
 
 | Route | Description |
-|-------|-------------|
+| ------- | ------------- |
 | `/` | Homepage — portfolio, capabilities, services |
-| `/systems` | **Atlas** — browse, filter, search all 58 systems |
+| `/systems` | **Atlas** — browse, filter, search all 57 systems |
 | `/systems/:slug` | **System Detail** — full view of any system |
 | `/control` | **Control Plane** — operational status, dependencies |
 | `/blog` | Blog index |
@@ -692,7 +691,7 @@ Push to `main` and connect the repo. The build command is `npm run build` with o
 ### Configuration
 
 | Setting | Value |
-|---------|-------|
+| --------- | ------- |
 | Output | Static (`output: 'export'`) |
 | Trailing Slash | `true` |
 | Images | Unoptimized (static) |
@@ -703,7 +702,7 @@ Push to `main` and connect the repo. The build command is `npm run build` with o
 ## 🔑 Design System
 
 | Token | Value | Usage |
-|-------|-------|-------|
+| ------- | ------- | ------- |
 | Background | `#0a0a0f` | Page background |
 | Card | `#12121a` | Card surfaces |
 | Border | `#1e1e2e` | Subtle borders |
@@ -721,5 +720,5 @@ Push to `main` and connect the repo. The build command is `npm run build` with o
 </p>
 
 <p align="center">
-  <sub>58 systems · 10 brands · 14 categories · 15 chains · one infrastructure</sub>
+  <sub>57 systems · 10 brands · 14 categories · 15 chains · one infrastructure</sub>
 </p>

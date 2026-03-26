@@ -50,8 +50,9 @@ try {
 
 const platforms = raw.platforms;
 if (!Array.isArray(platforms)) {
-  console.error('❌ platforms.json: "platforms" is not an array');
-  process.exit(1);
+  console.log('ℹ️  platforms.json: "platforms" array removed — canonical source is src/content/systems.ts');
+  console.log('    Run `npm run check` for full system validation.');
+  process.exit(0);
 }
 
 // ── Collect errors ────────────────────────────────────────────────────────────

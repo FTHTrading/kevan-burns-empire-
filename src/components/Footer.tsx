@@ -15,37 +15,13 @@ export default function Footer() {
     <footer className="border-t border-[#1e1e2e] bg-[#0a0a0f]">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <h3 className="text-xl font-bold text-white mb-3">KEVAN BURNS</h3>
-            <p className="text-sm text-[#8888a0] leading-relaxed">
-              Sovereign Systems Architect. Building deterministic infrastructure across blockchain, AI, and institutional finance.
+            <p className="text-sm text-[#8888a0] leading-relaxed mb-5">
+              Sovereign Systems Architect. 58 systems across blockchain, AI, and institutional finance.
             </p>
-          </div>
-
-          {/* Platforms */}
-          <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Systems Index</h4>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-              {systems.map((system) => (
-                <a
-                  key={system.id}
-                  href={system.links[0]?.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors py-1"
-                >
-                  <span>{system.emoji}</span>
-                  <span>{system.name}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Connect */}
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Connect</h4>
             <div className="flex flex-col gap-2">
               <a href={social.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors">
                 <ExternalLink className="w-3.5 h-3.5" /> GitHub
@@ -57,10 +33,57 @@ export default function Footer() {
                 <ExternalLink className="w-3.5 h-3.5" /> X / Twitter
               </a>
               <a href={social.zenodo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors">
-                <ExternalLink className="w-3.5 h-3.5" /> Zenodo
+                <ExternalLink className="w-3.5 h-3.5" /> Zenodo Research
               </a>
-              <a href={social.orcid} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors">
-                <ExternalLink className="w-3.5 h-3.5" /> ORCID
+            </div>
+          </div>
+
+          {/* Flagship Systems */}
+          <div className="md:col-span-2">
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Flagship Systems</h4>
+            <div className="grid grid-cols-2 gap-2">
+              {systems.filter(s => s.flagship || s.strategicPriority === 'flagship').slice(0, 12).map((system) => (
+                <a
+                  key={system.id}
+                  href={system.liveUrl ?? system.links[0]?.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors py-1"
+                >
+                  <span>{system.emoji}</span>
+                  <span className="truncate">{system.name}</span>
+                </a>
+              ))}
+              <a href="/systems" className="flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors py-1 col-span-2">
+                <ExternalLink className="w-3.5 h-3.5" /> View all 58 systems →
+              </a>
+            </div>
+          </div>
+
+          {/* Navigate */}
+          <div>
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Navigate</h4>
+            <div className="flex flex-col gap-2">
+              <a href="/systems" className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors">
+                <ExternalLink className="w-3.5 h-3.5" /> Atlas (58 Systems)
+              </a>
+              <a href="/funding" className="flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 font-medium transition-colors">
+                <ExternalLink className="w-3.5 h-3.5" /> Funding Opportunities
+              </a>
+              <a href="/services" className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors">
+                <ExternalLink className="w-3.5 h-3.5" /> Services
+              </a>
+              <a href="/press" className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors">
+                <ExternalLink className="w-3.5 h-3.5" /> Press
+              </a>
+              <a href="/blog" className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors">
+                <ExternalLink className="w-3.5 h-3.5" /> Blog
+              </a>
+              <a href="/control" className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors">
+                <ExternalLink className="w-3.5 h-3.5" /> Control Dashboard
+              </a>
+              <a href="mailto:kevan.burns@fthtrading.com" className="flex items-center gap-2 text-sm text-[#8888a0] hover:text-white transition-colors">
+                <ExternalLink className="w-3.5 h-3.5" /> kevan.burns@fthtrading.com
               </a>
             </div>
           </div>

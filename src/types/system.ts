@@ -246,6 +246,8 @@ export interface BusinessLayer {
   complianceFunction?: string;
   economicRole?: string;
   sovereignRole?: string;
+  strategy?: string;
+  useCases?: string[];
 }
 
 // ── Operational Notes ────────────────────────────────────────────────────────

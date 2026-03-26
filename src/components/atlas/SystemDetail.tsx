@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
@@ -19,6 +20,7 @@ import CategoryBadge from './CategoryBadge';
 import MaturityBadge from './MaturityBadge';
 import ChainBadge from './ChainBadge';
 import BrandBadge from './BrandBadge';
+import SystemAudioNarrator from './SystemAudioNarrator';
 
 interface Props {
   system: System;
@@ -26,10 +28,32 @@ interface Props {
 }
 
 export default function SystemDetail({ system: s, relatedSystems }: Props) {
+  const [navVisible, setNavVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const current = window.scrollY;
+      // Show when scrolling up or near the very top; hide when scrolling down past 60px
+      if (current < 60 || current < lastScrollY) {
+        setNavVisible(true);
+      } else {
+        setNavVisible(false);
+      }
+      setLastScrollY(current);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
       {/* Back bar */}
-      <div className="fixed top-0 left-0 right-0 z-40 border-b border-[#1e1e2e]/50 bg-[#0a0a0f]/80 backdrop-blur-xl">
+      <div
+        className={`fixed top-0 left-0 right-0 z-40 border-b border-[#1e1e2e]/50 bg-[#0a0a0f]/80 backdrop-blur-xl transition-transform duration-300 ${
+          navVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
           <Link
             href="/systems/"
@@ -87,6 +111,11 @@ export default function SystemDetail({ system: s, relatedSystems }: Props) {
               <CategoryBadge category={s.category} size="md" />
               <MaturityBadge maturity={s.maturity} size="md" />
               <BrandBadge brand={s.brand} />
+            </div>
+
+            {/* Audio narrator */}
+            <div className="mb-6">
+              <SystemAudioNarrator system={s} />
             </div>
 
             {/* Description */}
@@ -209,6 +238,37 @@ export default function SystemDetail({ system: s, relatedSystems }: Props) {
                         Market Category
                       </div>
                       <p className="text-[#b0b0c0]">{s.business.marketCategory}</p>
+                    </div>
+                  )}
+                  {s.business.capitalFunction && (
+                    <div>
+                      <div className="text-[#555570] text-[10px] uppercase tracking-wider mb-1">
+                        Capital Function
+                      </div>
+                      <p className="text-[#b0b0c0]">{s.business.capitalFunction}</p>
+                    </div>
+                  )}
+                  {s.business.strategy && (
+                    <div>
+                      <div className="text-[#555570] text-[10px] uppercase tracking-wider mb-1">
+                        Strategy
+                      </div>
+                      <p className="text-[#b0b0c0]">{s.business.strategy}</p>
+                    </div>
+                  )}
+                  {s.business.useCases && s.business.useCases.length > 0 && (
+                    <div>
+                      <div className="text-[#555570] text-[10px] uppercase tracking-wider mb-1">
+                        Use Cases
+                      </div>
+                      <ul className="space-y-1.5 mt-1">
+                        {s.business.useCases.map((uc, i) => (
+                          <li key={i} className="flex items-start gap-2 text-[11px] text-[#b0b0c0]">
+                            <span className="text-blue-400 mt-0.5 flex-shrink-0">→</span>
+                            {uc}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   )}
                 </div>

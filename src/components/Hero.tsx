@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useView } from '@/context/ViewContext';
 import AnimatedCounter from './AnimatedCounter';
 import { heroMetrics } from '@/lib/platformMetrics';
-import { ArrowRight, BookOpen, Building2, FlaskConical, Rocket } from 'lucide-react';
+import { ArrowRight, BookOpen, Building2, DollarSign, FlaskConical, Rocket } from 'lucide-react';
 
 export default function Hero() {
   const { viewMode } = useView();
@@ -60,8 +60,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="max-w-3xl mx-auto text-lg md:text-xl text-[#c0c0d0] leading-relaxed mb-12"
         >
-          Builds deterministic digital capital infrastructure across 13+ chains — combining blockchain engineering, 
-          AI systems, institutional finance architecture, and sovereign research platforms.
+          Builds deterministic digital capital infrastructure across XRPL, TRON, Avalanche, Polygon, and Stellar — in Rust, TypeScript, and Solidity — with AI-native payment rails (x402), multi-agent supervisory systems, and peer-published simulation research.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -83,6 +82,10 @@ export default function Hero() {
           <a href="#research" className="flex items-center gap-2 px-6 py-3 border border-[#2a2a3a] hover:border-blue-500/40 text-[#c0c0d0] hover:text-white rounded-lg font-medium transition-all duration-300">
             <BookOpen className="w-4 h-4" />
             Research & Publications
+          </a>
+          <a href="/funding" className="flex items-center gap-2 px-6 py-3 border border-emerald-500/30 hover:border-emerald-500/60 text-emerald-400 hover:text-emerald-300 rounded-lg font-medium transition-all duration-300">
+            <DollarSign className="w-4 h-4" />
+            Funding Opportunities
           </a>
           <a href="#contact" className="flex items-center gap-2 px-6 py-3 border border-[#2a2a3a] hover:border-blue-500/40 text-[#c0c0d0] hover:text-white rounded-lg font-medium transition-all duration-300">
             <Rocket className="w-4 h-4" />

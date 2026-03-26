@@ -70,7 +70,7 @@ export default function PlatformsGrid() {
     { label: 'Production',    value: String(liveCount)  },
     { label: 'Testnet',       value: String(testnetCount) },
     { label: 'Prototype',     value: String(protoCount) },
-    { label: 'Chains',        value: '13+'              },
+    { label: 'Chains',        value: '15+'              },
   ];
 
   return (
@@ -88,7 +88,7 @@ export default function PlatformsGrid() {
             {viewMode === 'creative' ? '🌐 Core Platforms' : 'Sovereign Systems Index'}
           </h2>
           <p className="text-[#8888a0] text-lg max-w-2xl mx-auto">
-            {totalCount} systems. {liveCount} production. 13+ integrated chains. One vertically integrated sovereign stack.
+            {totalCount} systems. {liveCount} production. 15+ integrated chains. One vertically integrated sovereign stack.
           </p>
 
           {/* Stats strip — data-driven from systems registry */}

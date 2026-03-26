@@ -60,7 +60,7 @@ export const stackPathways: StackPathway[] = [
   {
     id: 'compliance-proof-flow',
     name: 'Compliance & Proof Flow',
-    description: 'How compliance and proof assertions propagate: identity verification, sanctions screening, transaction monitoring, and cross-chain anchor settleent.',
+    description: 'How compliance and proof assertions propagate: identity verification, sanctions screening, transaction monitoring, and cross-chain anchor settlement.',
     systemIds: ['nil33-infra', 'dics', 'sovereign-vault', 'anchor-broadcast', 'l1-protocol'],
     flowType: 'compliance-proof',
   },

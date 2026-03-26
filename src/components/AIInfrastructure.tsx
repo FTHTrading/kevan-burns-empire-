@@ -6,38 +6,38 @@ import { Brain, Mic, FileSearch, Bot, Shield, Cpu } from 'lucide-react';
 const aiSystems = [
   {
     icon: Brain,
-    name: 'KAIROS',
-    description: 'Local Sovereign AI Operating System — zero cloud dependency, full data sovereignty, deterministic runtime.',
+    name: 'KAIROS — Supervisory AI',
+    description: 'Multi-agent AI cognitive layer running across all 60 systems — LLM orchestration, RAG pipelines, deterministic simulation integration, and continuous autonomous compliance surveillance.',
     color: '#EC4899',
+  },
+  {
+    icon: Cpu,
+    name: 'x402 AI-Native Payments',
+    description: 'HTTP 402 payment protocol engineered for AI-to-AI commerce. Flow: request → 402 challenge → Ed25519 cryptographic proof → instant USDF settlement. Runs edge-first on Cloudflare Workers. Live at x402.unykorn.org.',
+    color: '#14B8A6',
   },
   {
     icon: Bot,
     name: 'Agentic RAG Systems',
-    description: 'Multi-agent retrieval-augmented generation for deterministic document intelligence and knowledge synthesis.',
+    description: 'Multi-agent retrieval-augmented generation for deterministic document intelligence — institutional knowledge synthesis with auditable citation chains and zero hallucination guarantees.',
     color: '#8B5CF6',
-  },
-  {
-    icon: Mic,
-    name: 'Voice Runtime',
-    description: 'XTTS + Wake Word — sovereign voice interface with local speech synthesis and recognition.',
-    color: '#3B82F6',
-  },
-  {
-    icon: FileSearch,
-    name: 'Document Intelligence',
-    description: 'Deterministic document processing, extraction, and semantic analysis for institutional-grade data pipelines.',
-    color: '#14B8A6',
   },
   {
     icon: Shield,
     name: 'AI Compliance Validation',
-    description: 'Automated compliance checking and regulatory validation powered by deterministic AI inference.',
+    description: 'Automated compliance checking with OFAC SDN sanctions screening, automated SAR/CTR regulatory filing, and AI-driven AML/KYC validation across TRON and XRPL settlement rails.',
     color: '#F59E0B',
   },
   {
-    icon: Cpu,
-    name: 'MCP Agentic Infrastructure',
-    description: 'Model Context Protocol integration for marketing automation, content distribution, and sovereign digital presence management.',
+    icon: FileSearch,
+    name: 'Document Intelligence',
+    description: 'Deterministic document processing, extraction, and semantic analysis — SHA-256 proof chains on every output, institutional-grade audit trail by default.',
+    color: '#3B82F6',
+  },
+  {
+    icon: Mic,
+    name: 'Rust Native AI Runtimes',
+    description: 'Unykorn Layer 1 and the Popeye-Tars-Mars-Tev multi-agent cluster are fully Rust-native — deterministic memory safety, gRPC transport, and no runtime garbage collection. Built for sovereign infrastructure, not demos.',
     color: '#22C55E',
   },
 ];
@@ -103,9 +103,9 @@ export default function AIInfrastructure() {
             <div>
               <h3 className="text-xl font-bold text-white mb-2">KAIROS — The Sovereign OS</h3>
               <p className="text-[#c0c0d0] leading-relaxed mb-4">
-                KAIROS is not a chatbot wrapper. It&apos;s a full local AI operating system — running deterministic inference, 
-                agentic RAG pipelines, voice interfaces, and document intelligence without any cloud dependency. 
-                Built for sovereignty. Built for institutions that refuse to hand their data to third parties.
+                KAIROS is not a chatbot wrapper. It&apos;s a multi-agent supervisory AI layer operating across all 60 systems — running LLM orchestration, RAG pipelines, and autonomous compliance surveillance without cloud dependency. 
+                The x402 Protocol extends this: HTTP 402 challenge-response with Ed25519 cryptographic proof verification running edge-first on Cloudflare Workers — AI agents paying AI agents, settled in USDF, no intermediary required. 
+                Both are in production. Both are live.
               </p>
               <a
                 href="https://fthtrading.github.io/DOCS/"

@@ -23,7 +23,7 @@ export const brands: BrandDefinition[] = [
   { id: 'genesis', label: 'Genesis Protocol', color: '#f59e0b', description: 'Deterministic multi-agent economic simulation engine — 5,680 worlds, zero collapse observed.', domain: 'fthtrading.github.io/Genesis' },
   { id: 'kairos', label: 'KAIROS', color: '#ec4899', description: 'Sovereign AI operating system — local-first, deterministic AI runtime with agentic RAG and voice.', domain: 'fthtrading.github.io/DOCS' },
   { id: 'imperia', label: 'Imperia', color: '#ef4444', description: 'Command-grade operational platform for institutional-level sovereign infrastructure management.', domain: 'imperia-platform.netlify.app' },
-  { id: 'burns-independent', label: 'Burns Independent', color: '#78350f', description: 'Independent brand extensions — community, faith, culture. Isolated from capital infrastructure.', domain: undefined },
+  { id: 'burns-independent', label: 'Burns Independent', color: '#78350f', description: 'Independent brand extensions — community, culture, experimental. Isolated from capital infrastructure.', domain: undefined },
 ];
 
 export const getBrandById = (id: Brand): BrandDefinition | undefined =>
