@@ -21,7 +21,12 @@
     "validate:platforms": "node scripts/audit-platforms.mjs --validate",
     "deploy": "powershell -ExecutionPolicy Bypass -File deploy-cloudflare.ps1",
     "deploy:skip-build": "powershell -ExecutionPolicy Bypass -File deploy-cloudflare.ps1 -SkipBuild",
-    "deploy:ipfs": "powershell -ExecutionPolicy Bypass -File deploy-ipfs.ps1"
+    "deploy:ipfs": "powershell -ExecutionPolicy Bypass -File deploy-ipfs.ps1",
+    "tokens": "node scripts/list-tokens.mjs",
+    "tokens:expired": "node scripts/list-tokens.mjs --expired",
+    "access-log": "node scripts/access-log.mjs",
+    "access-log:today": "node scripts/access-log.mjs --today",
+    "issue-token": "node scripts/issue-token.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.34.3",

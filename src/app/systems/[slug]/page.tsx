@@ -41,5 +41,29 @@ export default function SystemPage({ params }: { params: { slug: string } }) {
 
   const related = getRelatedSystems(systems, system);
 
-  return <SystemDetailClient system={system} relatedSystems={related} />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: system.name,
+    description: system.description.slice(0, 300),
+    url: system.liveUrl ?? `https://kevanburns.com/systems/${system.slug}`,
+    applicationCategory: system.category,
+    operatingSystem: "Web",
+    creator: {
+      "@type": "Person",
+      "@id": "https://kevanburns.com/#kevan-burns",
+      name: "Kevan Burns",
+    },
+      keywords: [system.category, system.maturity, ...(system.chainTargets ?? []), ...(system.features ?? []).slice(0, 5)].join(", "),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SystemDetailClient system={system} relatedSystems={related} />
+    </>
+  );
 }

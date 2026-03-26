@@ -51,12 +51,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        {/* Person schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
+              "@id": "https://kevanburns.com/#kevan-burns",
               name: "Kevan Burns",
               jobTitle: "Sovereign Systems Architect",
               description:
@@ -72,6 +74,11 @@ export default function RootLayout({
                 postalCode: "30099",
                 addressCountry: "US",
               },
+              affiliation: {
+                "@type": "Organization",
+                "@id": "https://kevanburns.com/#unykorn-7777",
+                name: "Unykorn 7777, Inc.",
+              },
               sameAs: [
                 "https://github.com/fthtrading",
                 "https://www.linkedin.com/in/kevan-burns-842827389/",
@@ -85,6 +92,43 @@ export default function RootLayout({
                 "AI Operating Systems",
                 "Multi-chain Settlement Architecture",
                 "Real World Asset Tokenization",
+              ],
+            }),
+          }}
+        />
+        {/* Organization schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": "https://kevanburns.com/#unykorn-7777",
+              name: "Unykorn 7777, Inc.",
+              alternateName: "Unykorn",
+              url: "https://kevanburns.com",
+              email: "kevan.burns@fthtrading.com",
+              description:
+                "Digital capital infrastructure company building deterministic systems across 13+ blockchain networks. 58 platforms spanning DeFi, RWA tokenization, AI infrastructure, and institutional finance.",
+              founder: {
+                "@type": "Person",
+                "@id": "https://kevanburns.com/#kevan-burns",
+                name: "Kevan Burns",
+              },
+              numberOfEmployees: { "@type": "QuantitativeValue", value: 1 },
+              foundingDate: "2022",
+              areaServed: "Global",
+              knowsAbout: [
+                "Blockchain Infrastructure",
+                "Tokenized Capital Markets",
+                "Real World Asset Tokenization",
+                "AI Systems",
+                "Multi-chain Settlement",
+                "Institutional Finance Architecture",
+              ],
+              sameAs: [
+                "https://github.com/fthtrading",
+                "https://x.com/Unykornenergy",
               ],
             }),
           }}
