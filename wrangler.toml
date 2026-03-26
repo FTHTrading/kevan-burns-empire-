@@ -1,18 +1,9 @@
 name = "portfolio-unykorn"
 compatibility_date = "2024-01-01"
+pages_build_output_dir = "out"
 
-# KV namespace for diligence access tokens
-# ---------------------------------------------------------------
-# SETUP REQUIRED:
-#   1. Run: npx wrangler kv namespace create DILIGENCE_TOKENS
-#   2. Run: npx wrangler kv namespace create DILIGENCE_TOKENS --preview
-#   3. Paste the returned IDs into the two id fields below
-# ---------------------------------------------------------------
+# KV namespace — diligence access tokens
 [[kv_namespaces]]
-binding  = "DILIGENCE_TOKENS"
-id       = "REPLACE_WITH_KV_NAMESPACE_ID"
-preview_id = "REPLACE_WITH_PREVIEW_KV_NAMESPACE_ID"
-
-# Pages-specific config
-[env.production]
-name = "portfolio-unykorn"
+binding    = "DILIGENCE_TOKENS"
+id         = "8b38004ba58f412dbab99c7e192a4dd5"
+preview_id = "646cb6c3af8b4147911f668cb2027b3e"
