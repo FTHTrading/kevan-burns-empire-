@@ -7,8 +7,21 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ci": "vitest run --reporter=verbose",
+    "check": "node scripts/system-check.mjs",
+    "check:full": "node scripts/system-check.mjs --full",
+    "check:ci": "node scripts/system-check.mjs --ci",
+    "check:json": "node scripts/system-check.mjs --json",
+    "check:fix": "node scripts/system-check.mjs --fix",
+    "audit": "npx tsx scripts/full-audit.mjs",
     "audit:platforms": "node scripts/audit-platforms.mjs",
-    "validate:platforms": "node scripts/audit-platforms.mjs --validate"
+    "validate:platforms": "node scripts/audit-platforms.mjs --validate",
+    "deploy": "powershell -ExecutionPolicy Bypass -File deploy-cloudflare.ps1",
+    "deploy:skip-build": "powershell -ExecutionPolicy Bypass -File deploy-cloudflare.ps1 -SkipBuild",
+    "deploy:ipfs": "powershell -ExecutionPolicy Bypass -File deploy-ipfs.ps1"
   },
   "dependencies": {
     "framer-motion": "^12.34.3",
@@ -25,6 +38,8 @@
     "eslint-config-next": "14.2.35",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.1.1"
   }
 }
