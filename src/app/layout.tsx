@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Kevan Burns — Digital Empire Index",
+    images: [
+      {
+        url: "https://portfolio-unykorn.pages.dev/api/og?title=Kevan+Burns&subtitle=Sovereign+Systems+Architect&category=infrastructure&maturity=live&color=f59e0b",
+        width: 1200,
+        height: 630,
+        alt: "Kevan Burns — Sovereign Systems Architect",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -36,6 +44,9 @@ export const metadata: Metadata = {
     description:
       "Deterministic digital capital infrastructure across 13+ chains.",
     creator: "@Unykornenergy",
+    images: [
+      "https://portfolio-unykorn.pages.dev/api/og?title=Kevan+Burns&subtitle=Sovereign+Systems+Architect&category=infrastructure&maturity=live&color=f59e0b",
+    ],
   },
   robots: {
     index: true,

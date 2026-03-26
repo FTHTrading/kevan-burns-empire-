@@ -11,9 +11,34 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const system = getSystemBySlug(systems, params.slug);
   if (!system) return { title: 'System Not Found' };
+
+  const ogParams = new URLSearchParams({
+    title:    system.name,
+    subtitle: system.subtitle,
+    category: system.category,
+    maturity: system.maturity,
+    color:    system.color.replace(/^#/, ""),
+    ...(system.chainTargets?.length
+      ? { chains: system.chainTargets.slice(0, 4).join(",") }
+      : {}),
+  });
+  const ogImageUrl = `https://portfolio-unykorn.pages.dev/api/og?${ogParams.toString()}`;
+
   return {
     title: `${system.name} — ${system.subtitle} | Infrastructure Atlas`,
     description: system.description.slice(0, 200),
+    openGraph: {
+      title: `${system.name} — ${system.subtitle}`,
+      description: system.description.slice(0, 200),
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: system.name }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${system.name} — ${system.subtitle}`,
+      description: system.description.slice(0, 200),
+      images: [ogImageUrl],
+    },
   };
 }
 
