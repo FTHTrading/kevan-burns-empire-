@@ -26,6 +26,9 @@
 
 import { execSync } from "node:child_process";
 import crypto from "node:crypto";
+import { writeFileSync, unlinkSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 
 // ---------------------------------------------------------------------------
 // Parse args
@@ -60,18 +63,22 @@ const record = JSON.stringify({
 });
 
 // ---------------------------------------------------------------------------
-// Write to KV via wrangler
+// Write to KV via wrangler (temp file avoids shell quoting issues on Windows)
 // ---------------------------------------------------------------------------
 const ttlSeconds = days * 24 * 60 * 60;
+const tmpFile = join(tmpdir(), `diligence-token-${token}.json`);
 
 try {
+  writeFileSync(tmpFile, record, "utf8");
   execSync(
-    `npx wrangler kv key put --binding=DILIGENCE_TOKENS "${token}" '${record}' --expiration-ttl=${ttlSeconds}`,
+    `npx wrangler kv key put --binding=DILIGENCE_TOKENS --remote --preview false "${token}" --path "${tmpFile}" --ttl=${ttlSeconds}`,
     { stdio: "inherit" }
   );
 } catch (err) {
   console.error("\nFailed to write token to KV. Is wrangler authenticated and wrangler.toml configured?\n");
   process.exit(1);
+} finally {
+  try { unlinkSync(tmpFile); } catch { /* ignore */ }
 }
 
 // ---------------------------------------------------------------------------
@@ -98,5 +105,5 @@ Send the TOKEN (not the URL) to the counterparty via a secure channel.
 The login URL is public. The token is the credential.
 
 To revoke before expiry:
-  npx wrangler kv key delete --binding=DILIGENCE_TOKENS "${token}"
+  npx wrangler kv key delete --binding=DILIGENCE_TOKENS --remote --preview false "${token}"
 `);
