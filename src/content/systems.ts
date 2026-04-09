@@ -661,11 +661,14 @@ export const systems: System[] = [
       'Seeded RNG for reproducible agent behavior',
     ],
     links: [
+      { label: 'Platform', url: 'https://kairos.unykorn.org/', type: 'live' },
       { label: 'Documentation', url: 'https://fthtrading.github.io/DOCS/', type: 'docs' },
       { label: 'GitHub', url: 'https://github.com/FTHTrading/Kairos', type: 'repo' },
     ],
+    liveUrl: 'https://kairos.unykorn.org/',
     docsUrl: 'https://fthtrading.github.io/DOCS/',
     repoUrls: ['https://github.com/FTHTrading/Kairos'],
+    linkedDomains: ['kairos.unykorn.org'],
     metrics: { apiCount: 6, containerCount: 6, datastoreCount: 4, agentCount: 24 },
     dependencies: [
       { systemId: 'gmiie', relationship: 'depends-on', description: 'Market intelligence feed' },
