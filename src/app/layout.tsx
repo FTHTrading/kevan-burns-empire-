@@ -23,6 +23,10 @@ export const metadata: Metadata = {
     "Kevan Burns",
   ],
   authors: [{ name: "Kevan Burns" }],
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/apple-touch-icon.svg",
+  },
   openGraph: {
     title: "Kevan Burns | Sovereign Systems Architect",
     description:
