@@ -1491,9 +1491,12 @@ export const systems: System[] = [
       'Physical-to-digital bridge',
     ],
     links: [
+      { label: 'Platform', url: 'https://fthtrading.github.io/sunfarm--platform/', type: 'live' },
       { label: 'GitHub', url: 'https://github.com/FTHTrading/sunfarm--platform', type: 'repo' },
     ],
+    liveUrl: 'https://fthtrading.github.io/sunfarm--platform/',
     repoUrls: ['https://github.com/FTHTrading/sunfarm--platform'],
+    linkedDomains: ['fthtrading.github.io'],
     metrics: { apiCount: 5, containerCount: 5, datastoreCount: 3 },
     dependents: [
       { systemId: 'helios', relationship: 'feeds-into', description: 'Energy production data' },
