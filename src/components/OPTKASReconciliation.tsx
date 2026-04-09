@@ -69,7 +69,7 @@ const layers = [
       { label: 'Layer 1 ≠ Layer 2', value: 'Operating escrow ≠ Sponsor Note receivable', flag: null },
       { label: 'Note ≠ Program Face', value: '$500M Note is independent of $5B TC Advantage reference', flag: null },
       { label: '10% NDCF ≠ 10% of $5B', value: 'Participation is in distributable cash flows after all senior obligations', flag: 'contingent' as const },
-      { label: 'Same Signer', value: 'Kevan Burns signs as both Issuer and Payee on all instruments', flag: 'related-party' as const },
+      { label: 'Related-Party', value: 'Jimmy Thomas signs as SPV Manager (Issuer); Kevan Burns signs as CEO (Payee/system builder)', flag: 'related-party' as const },
       { label: 'Diligence Required', value: 'Authority review, conflict review, enforceability opinion', flag: 'reconciliation-req' as const },
       { label: 'Combined Documented Stack', value: '$528.3M–$603.3M (systems + note, NDCF excluded)', flag: null },
     ],

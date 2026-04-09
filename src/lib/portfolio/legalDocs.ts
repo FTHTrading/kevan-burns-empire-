@@ -92,10 +92,10 @@ export const legalDocuments: LegalDocument[] = [
       'NDCF = gross receipts less (senior debt service + operating expenses + reserves + taxes)',
       'Rights survive termination, repayment, refinancing, restructuring',
       'Freely assignable with SPV consent (not unreasonably withheld)',
-      'Initialed "KB" by same individual on behalf of both parties',
+      'Initialed by Jimmy Thomas (SPV Manager) and Kevan Burns (CEO) on behalf of their respective parties',
     ],
     cautionNote:
-      'Option A and Option B boxes are both checked on the document — only Option A is initialed. Initialed by the same person (KB) on both sides. Outside interpretation of which option controls and whether dual-checking creates ambiguity requires legal review.',
+      'Option A and Option B boxes are both checked on the document — only Option A is initialed. Initialed by affiliated parties (Jimmy Thomas for OPTKAS1-MAIN SPV, Kevan Burns for Unykorn 7777). Outside interpretation of which option controls and whether dual-checking creates ambiguity requires legal review.',
     confidence: 'documented',
     xrplTxHash: '82732AC2A975E9478387A9FA2D15274F0E3AA687632E24747803CE38D6261AB7',
   },
@@ -108,20 +108,21 @@ export const legalDocuments: LegalDocument[] = [
     type: 'signature-page',
     date: 'January 26, 2026',
     parties: [
-      { role: 'Manager / CEO', entity: 'Kevan Burns (both entities)' },
+      { role: 'Manager', entity: 'Jimmy Thomas (OPTKAS1-MAIN SPV)' },
+      { role: 'CEO', entity: 'Kevan Burns (Unykorn 7777, Inc.)' },
     ],
     what:
-      'Execution page for the Strategic Infrastructure & Execution Agreement. Signed by Kevan Burns in his capacity as both Manager of OPTKAS1-MAIN SPV and CEO of Unykorn 7777, Inc.',
+      'Execution page for the Strategic Infrastructure & Execution Agreement. Signed by Jimmy Thomas as Manager of OPTKAS1-MAIN SPV and Kevan Burns as CEO of Unykorn 7777, Inc.',
     why:
-      'Confirms execution of the master agreement. The presence of the same signatory on both sides is the primary related-party flag in the document set.',
+      'Confirms execution of the master agreement. The relationship between the signatories is a related-party consideration in the document set.',
     keyFacts: [
       'Signed January 26, 2026',
-      'Kevan Burns signs as Manager of OPTKAS1-MAIN SPV (Issuer)',
+      'Jimmy Thomas signs as Manager of OPTKAS1-MAIN SPV (Issuer)',
       'Kevan Burns signs as CEO of Unykorn 7777, Inc. (Payee)',
-      'Same individual acts as both counterparties',
+      'Related-party transaction between affiliated entities',
     ],
     cautionNote:
-      'This is the critical related-party document. Self-dealing at execution level. Any outside financing party will treat this as a self-dealing related-party transaction requiring independent authority confirmation, conflict review, and possibly independent legal opinion.',
+      'This is the critical related-party document. Jimmy Thomas (SPV Manager) and Kevan Burns (CEO) represent affiliated entities. Any outside financing party will treat this as a related-party transaction requiring independent authority confirmation, conflict review, and possibly independent legal opinion.',
     confidence: 'documented',
     xrplTxHash: 'FA9723AAB5D814D82EE7A787EABB9FA3DB403799A47600C548F172057C3A73AE',
   },
@@ -158,7 +159,7 @@ export const legalDocuments: LegalDocument[] = [
       'Acceleration available upon Event of Default without notice',
     ],
     cautionNote:
-      'Signed by Kevan Burns on both sides (as Manager of Issuer AND as CEO of Payee). The services "already rendered" were rendered by a company controlled by the same person who issued the note. This is a self-dealing transaction. Outside lenders will require: independent authority review, conflict waiver or independent approval, confirmation of services actually delivered, and may haircut significantly below par until validated.',
+      'Jimmy Thomas signs as Manager of OPTKAS1-MAIN SPV (Issuer); Kevan Burns signs as CEO of Unykorn 7777, Inc. (Payee). The services "already rendered" were rendered by a company controlled by a party affiliated with the SPV manager. This is a related-party transaction. Outside lenders will require: independent authority review, conflict waiver or independent approval, confirmation of services actually delivered, and may haircut significantly below par until validated.',
     confidence: 'documented',
     xrplTxHash: '2DEF7ED7229B18D214BB393A8156CF9DA7F8C7357F48A74EA331792C2EF05699',
   },
@@ -194,7 +195,7 @@ export const legalDocuments: LegalDocument[] = [
       'Assignment permitted — Issuer will recognize Lender as holder upon notice',
     ],
     cautionNote:
-      'The estoppel is signed by Kevan Burns on both sides — as Manager of OPTKAS1-MAIN SPV (the Issuer certifying the document) and as CEO of Unykorn 7777, Inc. (the Payee acknowledging the balance). An estoppel issued by a related party to itself has limited independent probative value. Outside lenders will require the Issuer to be independently controlled or will require independent legal opinion confirming authority and enforceability before relying on this certificate.',
+      'The estoppel is signed by Jimmy Thomas as Manager of OPTKAS1-MAIN SPV (the Issuer certifying the document) and by Kevan Burns as CEO of Unykorn 7777, Inc. (the Payee acknowledging the balance). An estoppel issued between affiliated parties has limited independent probative value. Outside lenders will require the Issuer to be independently controlled or will require independent legal opinion confirming authority and enforceability before relying on this certificate.',
     confidence: 'documented',
     xrplTxHash: 'C2DF14432F561E7E436ED863AE83C0304A597912F2A9FC10C6C98C472E04948B',
   },

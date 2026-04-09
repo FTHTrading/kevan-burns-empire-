@@ -182,7 +182,7 @@ export const proofItems: ProofItem[] = [
     type: 'legal-instrument',
     description: 'Estoppel-confirmed amount due: $502,465,753.42 as of March 3, 2026. Issued by OPTKAS1-MAIN SPV. Addressed to any financing counterparty.',
     trustTags: ['related-party-document'],
-    cautionNote: 'Signed by same individual on both sides. Related-party estoppel. External diligence required.',
+    cautionNote: 'Signed by affiliated parties — Jimmy Thomas (SPV Manager) and Kevan Burns (CEO). Related-party estoppel. External diligence required.',
   },
   {
     id: 'sponsor-note-proof',
@@ -190,7 +190,7 @@ export const proofItems: ProofItem[] = [
     type: 'legal-instrument',
     description: 'Executed January 26, 2026. $500M principal, 5% PIK, matures January 2029. Freely assignable and financeable.',
     trustTags: ['related-party-document'],
-    cautionNote: 'Signed by same individual as both Issuer and Payee.',
+    cautionNote: 'Signed by affiliated parties — Jimmy Thomas (Issuer Manager) and Kevan Burns (Payee CEO).',
   },
   {
     id: 'ndcf10-certificate-proof',

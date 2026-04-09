@@ -5,7 +5,7 @@ import { Bot, Loader2, MessageSquareText, Send } from 'lucide-react';
 
 const QUICK_QUESTIONS = [
   'What is the estoppel amount due?',
-  'Who signs both sides of the note documents?',
+  'Who signs the note documents on each side?',
   'What does 10% NDCF actually mean?',
   'What CUSIP and ISIN are referenced?',
 ];

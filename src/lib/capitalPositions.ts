@@ -150,7 +150,7 @@ export const capitalPositions: CapitalPosition[] = [
       { label: 'Strategic Infrastructure Agreement on record', type: 'document' },
     ],
     cautionTags: [
-      { label: 'Related-party execution — same signer across both sides of the transaction', severity: 'critical-review-item' },
+      { label: 'Related-party execution — affiliated entities with separate signers', severity: 'critical-review-item' },
       { label: 'No external counterparty validation confirmed', severity: 'elevated' },
       { label: 'Enforceability subject to outside legal review', severity: 'elevated' },
       { label: 'Payment path and liquidity profile not disclosed', severity: 'moderate' },
@@ -161,7 +161,7 @@ export const capitalPositions: CapitalPosition[] = [
       { label: 'Operations Manual', url: 'https://github.com/FTHTrading/optkas-manual', type: 'docs' },
     ],
     diligenceCaveats: [
-      'Executed as related-party paper — same signer appearing on both sides requires conflict and authority review before outside treatment.',
+      'Executed as related-party paper — affiliated entities require conflict and authority review before outside treatment.',
       'Estoppel is a procedurally useful instrument, but does not substitute for independent counterparty validation.',
       'Financing against this note at par is not supportable without: authority opinion, enforceability opinion, payment-path diligence.',
       'Present as: executed related-party structured claim, estoppel-backed, subject to diligence.',
@@ -372,7 +372,7 @@ export const legalDocuments: LegalDocumentSummary[] = [
     whyItMatters:
       'The root instrument. Without this agreement, neither the Note nor the Participation Right has a contractual basis. Reviewing this document is the first step in any diligence process.',
     cautionNote:
-      'Related-party execution — same signer appears on both sides. Authority and conflict review required before outside treatment.',
+      'Related-party execution — affiliated entities. Authority and conflict review required before outside treatment.',
     confidence: 'documented',
     relatedPositionId: 'optkas-sponsor-note',
   },
@@ -451,11 +451,11 @@ export const diligenceRiskFlags: DiligenceRiskFlag[] = [
     id: 'related-party-execution',
     flag: 'Related-party execution',
     explanation:
-      'The same signer appears across both sides of the transaction documents. This is the primary diligence risk for the Note and Participation Right and will be the first issue raised by any outside lender, investor, or auditor.',
+      'The Issuer (OPTKAS1-MAIN SPV, managed by Jimmy Thomas) and the Payee (Unykorn 7777, Inc., led by Kevan Burns as CEO) are affiliated parties. This related-party structure will be the first issue raised by any outside lender, investor, or auditor.',
     severity: 'critical-review-item',
     applicableTo: ['optkas-sponsor-note', 'tc-advantage-participation'],
     mitigation:
-      'Obtain an independent authority opinion confirming the capacity of the signing party on both sides. Document the conflict review process. If possible, obtain co-signature or ratification from an independent party.',
+      'Obtain an independent authority opinion confirming the capacity of each signing party. Document the conflict review process. If possible, obtain co-signature or ratification from an independent party.',
   },
   {
     id: 'no-external-audit',

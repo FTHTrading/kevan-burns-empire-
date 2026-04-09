@@ -6,7 +6,7 @@
 //   executed            — signed by at least one party; legally active
 //   estoppel-backed     — confirmed by estoppel certificate
 //   contingent          — value/existence depends on future events
-//   related-party       — signer appears on both sides of the instrument
+//   related-party       — related-party transaction between affiliated entities
 //   reconciliation-req  — figures from different layers need reconciliation
 // ─────────────────────────────────────────────────────────────────────────────
 

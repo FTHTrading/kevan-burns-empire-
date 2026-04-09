@@ -7,13 +7,13 @@ import DiligenceBadge from '@/components/DiligenceBadge';
 
 const relatedPartyFlags = [
   {
-    flag: 'Same signer on both sides',
-    detail: 'Kevan Burns executes all instruments as both Manager of OPTKAS1-MAIN SPV (obligor) and CEO of Unykorn 7777, Inc. (obligee). This is a fully self-dealing transaction.',
-    severity: 'critical',
+    flag: 'Related-party transaction',
+    detail: 'Jimmy Thomas signs as Manager of OPTKAS1-MAIN SPV (obligor). Kevan Burns signs as CEO of Unykorn 7777, Inc. (obligee/system builder). The SPV is independently managed by Thomas, Isaac, and others — this is not a single-signer arrangement.',
+    severity: 'high',
   },
   {
-    flag: '$502M instrument — no external counterparty',
-    detail: 'The Sponsor Consideration Note was issued, estoppelled, and tokenized without an independent counterparty. Outside lenders will require authority confirmation and independent legal opinion.',
+    flag: '$502M instrument — related-party diligence required',
+    detail: 'The Sponsor Consideration Note was executed between related parties. Outside lenders will require authority confirmation, conflict review, and independent legal opinion.',
     severity: 'critical',
   },
   {
@@ -85,19 +85,20 @@ export default function DiligenceNotes() {
               </div>
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <h3 className="text-red-300 font-black text-2xl uppercase tracking-tight">Same Signer — Both Sides</h3>
-                  <DiligenceBadge type="related-party" label="Critical: Same Signer" />
+                  <h3 className="text-red-300 font-black text-2xl uppercase tracking-tight">Related-Party Transaction</h3>
+                  <DiligenceBadge type="related-party" label="Related-Party" />
                 </div>
                 <p className="text-red-200/90 text-sm leading-relaxed mb-4">
-                  <strong className="text-red-300">Kevan Burns</strong> executes all instruments as both{' '}
-                  <strong className="text-red-300">Manager of OPTKAS1-MAIN SPV</strong> (obligor) and{' '}
-                  <strong className="text-red-300">CEO of Unykorn 7777, Inc.</strong> (obligee).
-                  This is a fully self-dealing related-party transaction with no independent counterparty.
+                  <strong className="text-red-300">Jimmy Thomas</strong> signs as{' '}
+                  <strong className="text-red-300">Manager of OPTKAS1-MAIN SPV</strong> (obligor).{' '}
+                  <strong className="text-red-300">Kevan Burns</strong> signs as{' '}
+                  <strong className="text-red-300">CEO of Unykorn 7777, Inc.</strong> (obligee / system builder).
+                  The SPV is independently managed by Thomas, Isaac, and others.
                 </p>
                 <p className="text-red-200/70 text-xs leading-relaxed">
                   All instruments — Sponsor Consideration Note ($500M), Sponsor Note Estoppel ($502,465,753.42),
-                  Bond Participation Certificate (NDCF10), and Strategic Infrastructure Agreement — were executed
-                  by a single individual on both sides. Outside financing will require independent legal opinion
+                  Bond Participation Certificate (NDCF10), and Strategic Infrastructure Agreement — are executed
+                  between related parties. Outside financing will require independent legal opinion
                   on authority, conflicts, and enforceability before any of these positions can be relied upon.
                 </p>
               </div>
