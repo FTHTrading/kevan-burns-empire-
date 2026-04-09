@@ -60,11 +60,12 @@ export const systems: System[] = [
     links: [
       { label: 'FTH-OS Platform', url: 'https://fth-os.netlify.app/', type: 'live' },
       { label: 'FTH Trading', url: 'https://fthtrading.github.io/FTH-Trading/', type: 'live' },
+      { label: 'FTH Education', url: 'https://fthedu.unykorn.org/', type: 'live' },
       { label: 'GitHub', url: 'https://github.com/FTHTrading', type: 'repo' },
     ],
     liveUrl: 'https://fth-os.netlify.app/',
     repoUrls: ['https://github.com/FTHTrading'],
-    linkedDomains: ['fth-os.netlify.app'],
+    linkedDomains: ['fth-os.netlify.app', 'fthedu.unykorn.org'],
     metrics: { apiCount: 100, containerCount: 16, datastoreCount: 8, contractCount: 11, endpointCount: 100, testCount: 941 },
     dependencies: [
       { systemId: 'sovereign-vault', relationship: 'depends-on', description: 'Key management and signing' },
