@@ -3386,6 +3386,72 @@ export const systems: System[] = [
     createdDate: '2026',
     lastUpdated: '2026-04-09',
   },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // TRITON RETRIEVAL PIPELINE — triton.unykorn.org
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  {
+    id: 'triton-retrieval',
+    slug: 'triton-retrieval',
+    name: 'Triton Retrieval Pipeline',
+    subtitle: 'Production-Grade RAG with NVIDIA Triton — Health-Aware Three-Path Failover',
+    tagline: 'Production-grade retrieval-augmented generation powered by NVIDIA Triton Inference Server — with health-aware three-path failover so your trading agent always gets the best possible answer, even when GPU is offline.',
+    description: 'The Triton Retrieval Pipeline is FTH Trading\'s production RAG system built on NVIDIA Triton Inference Server. It provides health-aware three-path failover for retrieval-augmented generation: Path 1 (Vector + Rerank) — full semantic search using NV-EmbedQA-E5-v5 for 1,024-dimensional embeddings with cosine similarity, then NV-RerankQA-Mistral-4B-v3 cross-encoder reranking for maximum relevance; Path 2 (Degraded Lexical Embed) — when Triton is temporarily unreachable, falls back to TF-IDF style lexical embedding with rag_gpu_degraded_fallback warning, reranker failures fall back to cosine similarity; Path 3 (Pure Lexical) — zero GPU dependency BM25 keyword scoring in under 1ms, the hard fail-safe that is always available. The pipeline selects the best available retrieval path at runtime based on GPU and Triton health status. Feature flag rollout via RAG_VECTOR_PATH_ENABLED runtime boolean gates the full vector+rerank path — ship with false (lexical safe mode), run a canary, confirm metrics, then flip to true for instant rollback capability. The stack runs from GPU silicon to trading decision: Triton handles batched inference with dynamic batching and millisecond latency, embeddings create 1,024-dim dense vectors for semantic search with top-20 candidates passed to the reranker, the cross-encoder reads full (query, passage) pairs for true semantic relevance scoring. Canary watch set monitors four signals: mode distribution (vector+rerank rising), rag_gpu_degraded_fallback (GPU path degrading), p95 latency by mode (vector ≤ 5ms target), and answer quality drift. RAG grounds LLM answers in real proprietary data — strategy docs, risk rules, post-mortems, fill logs — with source citations and relevance scores, zero hallucination on proprietary data. Filter by source_type (strategy, risk, etc.). Internal tooling powering the Kalshi OS trading agent.',
+    color: '#76B900',
+    colorName: 'green',
+    emoji: '⬡',
+    category: 'ai-supervisory-intelligence',
+    brand: 'fth-trading',
+    maturity: 'live',
+    flagship: false,
+    strategicPriority: 'strategic',
+    visibility: 'public',
+    confidentiality: 'restricted',
+    techStack: ['NVIDIA Triton', 'Python', 'TypeScript', 'Cloudflare Workers', 'gRPC', 'BM25', 'TF-IDF'],
+    chainTargets: [],
+    features: [
+      'Three-path health-aware failover: Vector+Rerank → Degraded Lexical → Pure Lexical',
+      'NVIDIA Triton Inference Server — batched inference, dynamic batching, millisecond latency',
+      'NV-EmbedQA-E5-v5 embedder — 1,024-dimensional dense vector space',
+      'NV-RerankQA-Mistral-4B-v3 cross-encoder reranker for semantic relevance',
+      'Pure lexical BM25 fail-safe — zero GPU dependency, sub-1ms retrieval',
+      'Feature flag rollout: RAG_VECTOR_PATH_ENABLED gates vector+rerank path',
+      'Instant rollback — one env var, regression test locks the gate',
+      'Canary watch set: mode distribution, degraded fallback, p95 latency, quality drift',
+      'RAG grounding: source citations with relevance scores, zero hallucination on proprietary data',
+      'Filter by source_type — strategy, risk, post-mortems, fill logs',
+      'Cosine similarity ranking with top-20 candidates passed to reranker',
+      'gRPC and HTTP API with GPU acceleration',
+      'Model versioning and live reload',
+      'Interactive demo with local simulation fallback',
+    ],
+    links: [
+      { label: 'Platform', url: 'https://triton.unykorn.org/', type: 'live' },
+      { label: 'GitHub', url: 'https://github.com/FTHTrading', type: 'repo' },
+    ],
+    liveUrl: 'https://triton.unykorn.org/',
+    linkedDomains: ['triton.unykorn.org'],
+    dependencies: [
+      { systemId: 'fth-trading', relationship: 'child-of', description: 'Internal RAG tooling for the FTH Trading platform' },
+      { systemId: 'unykorn-dc', relationship: 'integrates-with', description: 'GPU inference runs on UnyKorn DC infrastructure' },
+      { systemId: 'kairos', relationship: 'integrates-with', description: 'AI runtime and agent orchestration layer' },
+    ],
+    relatedSystemIds: ['fth-trading', 'kairos', 'unykorn-dc', 'unykorn-data', 'clawdbot'],
+    architecture: {
+      modules: ['Vector+Rerank Path', 'Degraded Lexical Path', 'Pure Lexical Path', 'Feature Flag Gate', 'Canary Watch Set'],
+      services: ['Triton Inference Server', 'Embedding Service', 'Reranker Service', 'BM25 Lexical Engine', 'Health Monitor', 'Metrics Collector'],
+      apis: ['gRPC Inference API', 'HTTP Retrieval API', 'WebSocket Demo API'],
+    },
+    business: {
+      targetUsers: ['Trading agents', 'Quantitative researchers', 'Risk managers', 'Internal FTH operators'],
+      revenueRole: 'Internal infrastructure — reduces hallucination risk and improves trading agent decision quality',
+      strategicRole: 'The retrieval intelligence layer ensuring every trading agent answer is grounded in real proprietary data with production-grade failover.',
+      marketCategory: 'AI Infrastructure / Retrieval-Augmented Generation',
+    },
+    createdDate: '2026',
+    lastUpdated: '2026-04-09',
+  },
 ];
 
 export default systems;
