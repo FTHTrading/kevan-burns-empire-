@@ -11,6 +11,7 @@ import {
 import { AlertTriangle, CheckCircle2, Info, Scale, ChevronRight, ExternalLink } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import DiligenceChat from '@/components/DiligenceChat';
 import OPTKASReconciliation from '@/components/OPTKASReconciliation';
 import FinanceabilityPanel from '@/components/FinanceabilityPanel';
 
@@ -27,6 +28,23 @@ const confidenceStyle = {
   'documented': 'text-green-400 bg-green-500/5 border-green-500/20',
   'summary-only': 'text-yellow-400 bg-yellow-500/5 border-yellow-500/20',
   'pending-reconciliation': 'text-orange-400 bg-orange-500/5 border-orange-500/20',
+};
+
+const colorNameClass: Record<string, string> = {
+  blue: 'text-blue-400',
+  amber: 'text-amber-400',
+  violet: 'text-violet-400',
+  emerald: 'text-emerald-400',
+  indigo: 'text-indigo-400',
+  slate: 'text-slate-400',
+};
+
+const bucketTagClass: Record<string, string> = {
+  emerald: 'border-emerald-500/30 text-emerald-400 bg-emerald-500/10',
+  blue: 'border-blue-500/30 text-blue-400 bg-blue-500/10',
+  indigo: 'border-indigo-500/30 text-indigo-400 bg-indigo-500/10',
+  slate: 'border-slate-500/30 text-slate-400 bg-slate-500/10',
+  violet: 'border-violet-500/30 text-violet-400 bg-violet-500/10',
 };
 
 export default function DiligencePageClient() {
@@ -55,6 +73,8 @@ export default function DiligencePageClient() {
               and independent advisors conducting diligence.
             </p>
           </motion.div>
+
+          <DiligenceChat />
 
           {/* Reconciliation Panel */}
           <section className="mb-16">
@@ -136,7 +156,7 @@ export default function DiligencePageClient() {
                       <h3 className="text-xl font-bold text-white mt-1">{pos.title}</h3>
                       <p className="text-sm text-[#8888a0]">{pos.subtitle}</p>
                     </div>
-                    <div className="font-mono text-2xl font-bold" style={{ color: pos.color }}>{pos.amountDisplay}</div>
+                    <div className={`font-mono text-2xl font-bold ${colorNameClass[pos.colorName] ?? 'text-white'}`}>{pos.amountDisplay}</div>
                   </div>
                   {pos.amountNote && (
                     <p className="text-xs text-[#6868a0] mb-4 italic">{pos.amountNote}</p>
@@ -255,8 +275,7 @@ export default function DiligencePageClient() {
                     {bucket.systemIds.map(id => (
                       <span
                         key={id}
-                        className="text-[10px] px-2 py-0.5 rounded border font-mono"
-                        style={{ borderColor: `${bucket.color}30`, color: bucket.color, backgroundColor: `${bucket.color}10` }}
+                        className={`text-[10px] px-2 py-0.5 rounded border font-mono ${bucketTagClass[bucket.colorName] ?? 'border-white/20 text-white bg-white/5'}`}
                       >
                         {id}
                       </span>

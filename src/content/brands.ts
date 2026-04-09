@@ -14,7 +14,7 @@ export interface BrandDefinition {
 }
 
 export const brands: BrandDefinition[] = [
-  { id: 'fth-trading', label: 'FTH Trading', color: '#3b82f6', description: 'Future Tech Holdings — sovereign capital infrastructure, deterministic execution, institutional-grade systems. Est. 1976.', domain: 'fthtrading.com' },
+  { id: 'fth-trading', label: 'FTH Trading', color: '#3b82f6', description: 'FTH — sovereign capital infrastructure, deterministic execution, institutional-grade systems. Est. 1976.', domain: 'fthtrading.com' },
   { id: 'unykorn', label: 'UnyKorn', color: '#22c55e', description: 'Sovereign grid infrastructure for decentralized coordination, governance, and operational architecture.', domain: 'unykorn.org' },
   { id: 'y3k-markets', label: 'Y3K Markets', color: '#a855f7', description: 'Institutional-grade tokenized real-world asset infrastructure for structuring and managing digital securities.', domain: 'y3kmarkets.com' },
   { id: 'nil33', label: 'NIL33', color: '#6366f1', description: 'Zero-knowledge compliance rail and athlete intelligence platform — privacy-preserving identity and NCAA-compliant valuation.', domain: 'nil33.com' },

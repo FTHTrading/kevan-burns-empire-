@@ -1,81 +1,107 @@
 # deploy-cloudflare.ps1
-# Sovereign Cloudflare Pages Deployment Script
-# Builds the Next.js static export and deploys to portfolio.unykorn.org
+# Builds the Next.js export and deploys it to Cloudflare Pages.
 
 param(
     [switch]$SkipBuild,
-    [string]$Message = "Sovereign deployment $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
+    [string]$Message = "Deployment $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
 )
 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = 'Stop'
 $ProjectDir = $PSScriptRoot
-$OutDir = Join-Path $ProjectDir "out"
+$OutDir = Join-Path $ProjectDir 'out'
 
-function Write-Step { param([string]$M) Write-Host "`n=== $M ===" -ForegroundColor Cyan }
-function Write-OK   { param([string]$M) Write-Host "  [OK] $M" -ForegroundColor Green }
-function Write-Info { param([string]$M) Write-Host "  -> $M" -ForegroundColor Gray }
-function Write-Warn { param([string]$M) Write-Host "  [!] $M" -ForegroundColor Yellow }
+function Write-Step {
+    param([string]$Text)
+    Write-Host ''
+    Write-Host "=== $Text ===" -ForegroundColor Cyan
+}
 
-# ── Load API token ───────────────────────────────────────────────────────────
-$EnvFile = Join-Path $ProjectDir ".env.local"
+function Write-Ok {
+    param([string]$Text)
+    Write-Host "[OK] $Text" -ForegroundColor Green
+}
+
+function Write-Info {
+    param([string]$Text)
+    Write-Host "-> $Text" -ForegroundColor Gray
+}
+
+function Write-WarnMsg {
+    param([string]$Text)
+    Write-Host "[!] $Text" -ForegroundColor Yellow
+}
+
+$EnvFile = Join-Path $ProjectDir '.env.local'
 if (Test-Path $EnvFile) {
-    Get-Content $EnvFile | ForEach-Object {
-        if ($_ -match '^CLOUDFLARE_API_TOKEN=(.+)$') {
-            $env:CLOUDFLARE_API_TOKEN = $Matches[1]
+    foreach ($Line in Get-Content $EnvFile) {
+        if ($Line -match '^CLOUDFLARE_API_TOKEN=(.+)$') {
+            $env:CLOUDFLARE_API_TOKEN = $Matches[1].Trim()
         }
     }
 }
 
+Write-Step 'Pre-flight checks'
 if (-not $env:CLOUDFLARE_API_TOKEN) {
-    Write-Error "CLOUDFLARE_API_TOKEN not set. Add it to .env.local or set as environment variable."
-    exit 1
+    throw 'CLOUDFLARE_API_TOKEN not set. Add it to .env.local or set it in the environment.'
 }
-Write-Step "Pre-flight Checks"
-Write-OK "Cloudflare API token loaded"
+Write-Ok 'Cloudflare API token loaded'
 
-# ── Build ─────────────────────────────────────────────────────────────────────
 if (-not $SkipBuild) {
-    Write-Step "Building Next.js Static Export"
+    Write-Step 'Building site'
     Push-Location $ProjectDir
     try {
         & npm run build
-        if ($LASTEXITCODE -ne 0) { Write-Error "Build failed"; exit 1 }
-        Write-OK "Build completed — 74 pages generated"
-    } finally { Pop-Location }
-} else {
-    Write-Warn "Skipping build (--SkipBuild flag set)"
+        if ($LASTEXITCODE -ne 0) {
+            throw 'Build failed.'
+        }
+        Write-Ok 'Build completed'
+    }
+    finally {
+        Pop-Location
+    }
+}
+else {
+    Write-WarnMsg 'Skipping build because SkipBuild was set.'
 }
 
-if (-not (Test-Path $OutDir)) { Write-Error "out/ directory not found. Run build first."; exit 1 }
+if (-not (Test-Path $OutDir)) {
+    throw 'The out directory was not found. Run the build first.'
+}
 
-$outSize = [math]::Round((Get-ChildItem -Path $OutDir -Recurse | Measure-Object -Property Length -Sum).Sum / 1MB, 2)
-Write-Info "Output size: $outSize MB"
+$OutBytes = (Get-ChildItem -Path $OutDir -Recurse -File | Measure-Object -Property Length -Sum).Sum
+$OutSizeMb = [math]::Round(($OutBytes / 1MB), 2)
+Write-Info "Output size: $OutSizeMb MB"
 
-# ── Deploy ────────────────────────────────────────────────────────────────────
-Write-Step "Deploying to portfolio.unykorn.org (Cloudflare Pages)"
-Write-Info "Project: portfolio-unykorn"
+Write-Step 'Deploying to Cloudflare Pages'
+Write-Info 'Project: portfolio-unykorn'
 Write-Info "Message: $Message"
+
+$DeployArgs = @(
+    'wrangler',
+    'pages',
+    'deploy',
+    $OutDir,
+    '--project-name=portfolio-unykorn',
+    '--branch=production',
+    '--commit-dirty=true',
+    "--commit-message=$Message"
+)
 
 Push-Location $ProjectDir
 try {
-    $result = & npx wrangler pages deploy out `
-        --project-name=portfolio-unykorn `
-        --branch=production `
-        --commit-dirty=true `
-        --commit-message=$Message 2>&1
-
+    $Result = & npx @DeployArgs 2>&1
     if ($LASTEXITCODE -ne 0) {
-        Write-Error "Deployment failed: $result"
-        exit 1
+        throw "Deployment failed.`n$($Result -join [Environment]::NewLine)"
     }
 
-    Write-OK "Deployed successfully"
-    Write-Host ""
-    $result | ForEach-Object { if ($_ -match "https://") { Write-Host "  $_" -ForegroundColor White } }
-    Write-Host ""
-    Write-Host "  Live: https://portfolio.unykorn.org/" -ForegroundColor Green
-    Write-Host "  Systems: https://portfolio.unykorn.org/systems/" -ForegroundColor Green
-    Write-Host ""
-    Write-Host "  All systems sovereign. Zero undefined failure states." -ForegroundColor DarkCyan
-    Write-Host ""
-} finally { Pop-Location }
+    Write-Ok 'Deployment completed'
+    foreach ($Line in $Result) {
+        if ($Line -match 'https://') {
+            Write-Host $Line -ForegroundColor White
+        }
+    }
+    Write-Host 'Live: https://portfolio.unykorn.org/' -ForegroundColor Green
+}
+finally {
+    Pop-Location
+}

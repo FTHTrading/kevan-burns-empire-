@@ -13,15 +13,36 @@ import StatusTable from '@/components/control/StatusTable';
 import MaturityChart from '@/components/control/MaturityChart';
 import CapitalView from '@/components/control/CapitalView';
 import DependencyGraph from '@/components/control/DependencyGraph';
+import PipelineView from '@/components/control/PipelineView';
 
-type ControlTab = 'status' | 'capital' | 'dependencies' | 'analytics';
+type ControlTab = 'status' | 'capital' | 'dependencies' | 'analytics' | 'pipeline';
 
 const TABS: { id: ControlTab; label: string; emoji: string }[] = [
-  { id: 'status', label: 'System Status', emoji: '⚡' },
-  { id: 'capital', label: 'Capital View', emoji: '💰' },
-  { id: 'dependencies', label: 'Dependencies', emoji: '🗺️' },
-  { id: 'analytics', label: 'Analytics', emoji: '📊' },
+  { id: 'status', label: 'System Status', emoji: '\u26A1' },
+  { id: 'pipeline', label: 'Deal Pipeline', emoji: '\uD83D\uDCBC' },
+  { id: 'capital', label: 'Capital View', emoji: '\uD83D\uDCB0' },
+  { id: 'dependencies', label: 'Dependencies', emoji: '\uD83D\uDDFA\uFE0F' },
+  { id: 'analytics', label: 'Analytics', emoji: '\uD83D\uDCCA' },
 ];
+
+const METRIC_ACCENTS: Record<string, string> = {
+  'Systems': 'text-[#f0f0f5]',
+  'Operational': 'text-green-400',
+  'Live URLs': 'text-blue-400',
+  'Revenue Ready': 'text-emerald-400',
+  'Flagships': 'text-yellow-400',
+  'Strategic': 'text-purple-400',
+  'Chains': 'text-violet-400',
+  'Brands': 'text-pink-400',
+};
+
+const GLANCE_ACCENTS: Record<string, string> = {
+  'What exists?': 'text-[#f0f0f5]',
+  'What is live?': 'text-green-400',
+  'What is connected?': 'text-purple-400',
+  'What is valuable?': 'text-yellow-400',
+  'What gets built next?': 'text-blue-400',
+};
 
 interface ControlDashboardProps {
   systems: System[];
@@ -98,7 +119,7 @@ export default function ControlDashboard({ systems }: ControlDashboardProps) {
               animate={{ opacity: 1, y: 0 }}
               className="bg-[#12121a] border border-[#1e1e2e] rounded-xl p-3 text-center"
             >
-              <div className="text-xl font-bold font-mono" style={{ color: m.color }}>
+              <div className={`text-xl font-bold font-mono ${METRIC_ACCENTS[m.label]}`}>
                 {m.value}
               </div>
               <div className="text-[10px] text-[#8888a0] mt-0.5">{m.label}</div>
@@ -150,6 +171,8 @@ export default function ControlDashboard({ systems }: ControlDashboardProps) {
               </div>
             )}
 
+            {activeTab === 'pipeline' && <PipelineView views={controlViews} />}
+
             {activeTab === 'capital' && <CapitalView views={controlViews} />}
 
             {activeTab === 'dependencies' && (
@@ -194,7 +217,7 @@ export default function ControlDashboard({ systems }: ControlDashboardProps) {
               },
             ].map((item) => (
               <div key={item.q} className="space-y-1">
-                <div className="text-xs font-semibold" style={{ color: item.color }}>
+                <div className={`text-xs font-semibold ${GLANCE_ACCENTS[item.q]}`}>
                   {item.q}
                 </div>
                 <div className="text-xs text-[#8888a0]">{item.a}</div>

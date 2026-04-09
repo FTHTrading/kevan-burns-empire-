@@ -7,3 +7,6 @@ pages_build_output_dir = "out"
 binding    = "DILIGENCE_TOKENS"
 id         = "8b38004ba58f412dbab99c7e192a4dd5"
 preview_id = "646cb6c3af8b4147911f668cb2027b3e"
+
+[ai]
+binding = "AI"
